@@ -25,6 +25,8 @@ DerivedData/
 ## Personal Exemptions
 Art/
 
+**/.DS_Store
+
 ## Obj-C/Swift specific
 *.hmap
 

@@ -19,10 +19,10 @@ struct MainMenu: View {
                         .foregroundColor(.white)
                         .font(.title)
                         .padding()
-                        NavigationLink(destination: EasyGameView()) {
+                        NavigationLink(destination: VeryEasyGameView()) {
                                 PokemonImageView(selection: "001")
                             }
-                        NavigationLink(destination: Text("Level 2")) {
+                        NavigationLink(destination: EasyGameView()) {
                                 PokemonImageView(selection: "002")
                             }
                         NavigationLink(destination: Text("Level 3")) {

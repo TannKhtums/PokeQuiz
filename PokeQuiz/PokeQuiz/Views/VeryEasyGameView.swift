@@ -18,7 +18,7 @@ struct VeryEasyGameView: View {
                     .font(.callout)
                     .multilineTextAlignment(.leading)
                     .padding()
-                EasyQuestionView()
+                VeryEasyQuestionView()
             }
             .navigationBarHidden(true)
             .environmentObject(viewModel)
@@ -32,7 +32,7 @@ struct VeryEasyGameView: View {
     }
 }
 
-struct EasyGameView_Previews: PreviewProvider {
+struct VeryEasyGameView_Previews: PreviewProvider {
     static var previews: some View {
         VeryEasyGameView()
     }
