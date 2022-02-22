@@ -36,11 +36,28 @@ struct PokemonImageViewEasy: View {
     }
 }
 
+struct PokemonImageViewMedium: View {
+    var selection: String
+    
+    var body: some View {
+        Image(selection)
+                .resizable()
+                .frame(width: 225, height: 225)
+                .padding()
+                .background(.regularMaterial)
+                .shadow(radius: 5)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+    }
+}
+
 struct PokemonImageView_Previews: PreviewProvider {
     static var previews: some View {
-        VStack {
-            PokemonImageView(selection: "001")
-            PokemonImageViewEasy(selection: "001")
+        ScrollView {
+            VStack {
+                PokemonImageView(selection: "001")
+                PokemonImageViewEasy(selection: "001")
+                PokemonImageViewMedium(selection: "001")
+            }
         }
     }
 }

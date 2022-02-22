@@ -12,8 +12,8 @@ struct PokeQuizApp: App {
     var body: some Scene {
         WindowGroup {
             WelcomeScreen()
-            //            EasyQuestionView()
-//                .environmentObject(EasyGameViewModel())
+//            TypesView()
+//                .environmentObject(MediumGameViewModel())
         }
     }
 }

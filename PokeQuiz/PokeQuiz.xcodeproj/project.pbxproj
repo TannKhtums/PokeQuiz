@@ -20,11 +20,16 @@
 		B3D5C30227B8AF68002C2AE4 /* EasyGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5C30127B8AF68002C2AE4 /* EasyGameView.swift */; };
 		B3D5C30427B8AFEF002C2AE4 /* SillouhetteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5C30327B8AFEF002C2AE4 /* SillouhetteView.swift */; };
 		B3D5C30627B8B2CC002C2AE4 /* EasyQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5C30527B8B2CC002C2AE4 /* EasyQuestionView.swift */; };
+		B3D5C30827BC7E50002C2AE4 /* TypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5C30727BC7E50002C2AE4 /* TypesView.swift */; };
 		B3E7352B279D196D0099127F /* PokeQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7352A279D196D0099127F /* PokeQuizApp.swift */; };
 		B3E7352D279D196D0099127F /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7352C279D196D0099127F /* MainMenu.swift */; };
 		B3E7352F279D196F0099127F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E7352E279D196F0099127F /* Assets.xcassets */; };
 		B3E73532279D196F0099127F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E73531279D196F0099127F /* Preview Assets.xcassets */; };
-		B3E7358B27A038F20099127F /* EasyQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7358A27A038F20099127F /* EasyQuestion.swift */; };
+		B3E9798D27BDE9530068A833 /* MediumGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9798C27BDE9530068A833 /* MediumGameViewModel.swift */; };
+		B3E9798F27BDE97F0068A833 /* MediumQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9798E27BDE97F0068A833 /* MediumQuestionView.swift */; };
+		B3E9799127BDED740068A833 /* MediumGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9799027BDED740068A833 /* MediumGame.swift */; };
+		B3E9799327BDEDD40068A833 /* PokemonTypesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9799227BDEDD40068A833 /* PokemonTypesTest.swift */; };
+		B3E9799527BF4BBA0068A833 /* MediumGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E9799427BF4BBA0068A833 /* MediumGameView.swift */; };
 		B3FA3AB827B2AA7A00E0A833 /* VeryEasyGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA3AB727B2AA7A00E0A833 /* VeryEasyGameView.swift */; };
 		B3FA3ABA27B4A18200E0A833 /* EasyScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA3AB927B4A18200E0A833 /* EasyScoreView.swift */; };
 		B3FA3ABC27B4A1A000E0A833 /* EasyScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA3ABB27B4A1A000E0A833 /* EasyScoreViewModel.swift */; };
@@ -44,12 +49,17 @@
 		B3D5C30127B8AF68002C2AE4 /* EasyGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyGameView.swift; sourceTree = "<group>"; };
 		B3D5C30327B8AFEF002C2AE4 /* SillouhetteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SillouhetteView.swift; sourceTree = "<group>"; };
 		B3D5C30527B8B2CC002C2AE4 /* EasyQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyQuestionView.swift; sourceTree = "<group>"; };
+		B3D5C30727BC7E50002C2AE4 /* TypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypesView.swift; sourceTree = "<group>"; };
 		B3E73527279D196D0099127F /* PokeQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7352A279D196D0099127F /* PokeQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeQuizApp.swift; sourceTree = "<group>"; };
 		B3E7352C279D196D0099127F /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		B3E7352E279D196F0099127F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3E73531279D196F0099127F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B3E7358A27A038F20099127F /* EasyQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyQuestion.swift; sourceTree = "<group>"; };
+		B3E9798C27BDE9530068A833 /* MediumGameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumGameViewModel.swift; sourceTree = "<group>"; };
+		B3E9798E27BDE97F0068A833 /* MediumQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumQuestionView.swift; sourceTree = "<group>"; };
+		B3E9799027BDED740068A833 /* MediumGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumGame.swift; sourceTree = "<group>"; };
+		B3E9799227BDEDD40068A833 /* PokemonTypesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTypesTest.swift; sourceTree = "<group>"; };
+		B3E9799427BF4BBA0068A833 /* MediumGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumGameView.swift; sourceTree = "<group>"; };
 		B3FA3AB727B2AA7A00E0A833 /* VeryEasyGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VeryEasyGameView.swift; sourceTree = "<group>"; };
 		B3FA3AB927B4A18200E0A833 /* EasyScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyScoreView.swift; sourceTree = "<group>"; };
 		B3FA3ABB27B4A1A000E0A833 /* EasyScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyScoreViewModel.swift; sourceTree = "<group>"; };
@@ -73,11 +83,14 @@
 				B3E7352C279D196D0099127F /* MainMenu.swift */,
 				B3FA3AB727B2AA7A00E0A833 /* VeryEasyGameView.swift */,
 				B3D5C30127B8AF68002C2AE4 /* EasyGameView.swift */,
-				B3D5C30327B8AFEF002C2AE4 /* SillouhetteView.swift */,
-				B3FA3AB927B4A18200E0A833 /* EasyScoreView.swift */,
-				B396925727AE195600DAC5AE /* VeryEasyQuestionView.swift */,
 				B3D5C30527B8B2CC002C2AE4 /* EasyQuestionView.swift */,
+				B3FA3AB927B4A18200E0A833 /* EasyScoreView.swift */,
+				B3E9799427BF4BBA0068A833 /* MediumGameView.swift */,
+				B3E9798E27BDE97F0068A833 /* MediumQuestionView.swift */,
+				B3D5C30327B8AFEF002C2AE4 /* SillouhetteView.swift */,
+				B396925727AE195600DAC5AE /* VeryEasyQuestionView.swift */,
 				B396925B27AE1AF000DAC5AE /* PokemonImageView.swift */,
+				B3D5C30727BC7E50002C2AE4 /* TypesView.swift */,
 				B396925D27AE1CD800DAC5AE /* BackgroundView.swift */,
 				B396926127AF383B00DAC5AE /* ButtonView.swift */,
 				B396926A27B1FBDC00DAC5AE /* BottomTextView.swift */,
@@ -90,8 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				B396925F27AF071000DAC5AE /* EasyGame.swift */,
-				B3E7358A27A038F20099127F /* EasyQuestion.swift */,
+				B3E9799027BDED740068A833 /* MediumGame.swift */,
 				B396925927AE199D00DAC5AE /* PokemonData.swift */,
+				B3E9799227BDEDD40068A833 /* PokemonTypesTest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -100,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				B396926327AF458300DAC5AE /* EasyGameViewModel.swift */,
+				B3E9798C27BDE9530068A833 /* MediumGameViewModel.swift */,
 				B3FA3ABB27B4A1A000E0A833 /* EasyScoreViewModel.swift */,
 			);
 			path = ViewModels;
@@ -213,7 +228,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B396926B27B1FBDC00DAC5AE /* BottomTextView.swift in Sources */,
-				B3E7358B27A038F20099127F /* EasyQuestion.swift in Sources */,
 				B3E7352D279D196D0099127F /* MainMenu.swift in Sources */,
 				B396926227AF383B00DAC5AE /* ButtonView.swift in Sources */,
 				B396925E27AE1CD800DAC5AE /* BackgroundView.swift in Sources */,
@@ -221,16 +235,22 @@
 				B396925827AE195600DAC5AE /* VeryEasyQuestionView.swift in Sources */,
 				B3FA3AB827B2AA7A00E0A833 /* VeryEasyGameView.swift in Sources */,
 				B396926427AF458300DAC5AE /* EasyGameViewModel.swift in Sources */,
+				B3E9798F27BDE97F0068A833 /* MediumQuestionView.swift in Sources */,
+				B3E9799327BDEDD40068A833 /* PokemonTypesTest.swift in Sources */,
 				B396925627ACD21900DAC5AE /* WelcomeScreen.swift in Sources */,
 				B3D5C30627B8B2CC002C2AE4 /* EasyQuestionView.swift in Sources */,
 				B396926027AF071000DAC5AE /* EasyGame.swift in Sources */,
+				B3E9799527BF4BBA0068A833 /* MediumGameView.swift in Sources */,
 				B3E7352B279D196D0099127F /* PokeQuizApp.swift in Sources */,
 				B3FA3ABC27B4A1A000E0A833 /* EasyScoreViewModel.swift in Sources */,
+				B3D5C30827BC7E50002C2AE4 /* TypesView.swift in Sources */,
 				B3D5C30427B8AFEF002C2AE4 /* SillouhetteView.swift in Sources */,
+				B3E9799127BDED740068A833 /* MediumGame.swift in Sources */,
 				B3FA3ABA27B4A18200E0A833 /* EasyScoreView.swift in Sources */,
 				B396925C27AE1AF000DAC5AE /* PokemonImageView.swift in Sources */,
 				B396925A27AE199D00DAC5AE /* PokemonData.swift in Sources */,
 				B3D5C30227B8AF68002C2AE4 /* EasyGameView.swift in Sources */,
+				B3E9798D27BDE9530068A833 /* MediumGameViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
