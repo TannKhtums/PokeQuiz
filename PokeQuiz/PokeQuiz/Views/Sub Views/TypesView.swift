@@ -10,26 +10,6 @@ import SwiftUI
 struct TypesView: View {
     
     @EnvironmentObject var viewModel: MediumGameViewModel
-    
-    @State private var selectedToggle = false
-    @State private var superDuperToggle = false
-    @State var selectedTypes: [String] = []
-    
-    func trimArray() {
-        if selectedTypes.count > 2 {
-            print("greater than 2")
-            selectedTypes.remove(at: 0)
-            print(selectedTypes)
-        }
-    }
-    
-    func unselectOrAddType(type: String) {
-        if let index = selectedTypes.firstIndex(of: type) {
-                selectedTypes.remove(at: index)
-            } else {
-            selectedTypes.append(type)
-        }
-    }
 
     let typesArr = ["Normal", "Fire", "Water", "Grass", "Electric", "Ice", "Fighting", "Poison", "Ground", "Flying", "Bug", "Psychic", "Rock", "Ghost", "Dark", "Dragon", "Steel", "Fairy"]
    
@@ -83,11 +63,11 @@ struct TypesView: View {
                     Button {
                         print("Button")
                         print(type)
-                        print(selectedTypes)
-                        unselectOrAddType(type: type)
-                        print(selectedTypes)
-                        trimArray()
-                        print(selectedTypes)
+                        print(viewModel.selectedTypes)
+                        viewModel.unselectOrAddType(type: type)
+                        print(viewModel.selectedTypes)
+                        viewModel.trimArray()
+                        print(viewModel.selectedTypes)
                     } label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 20)
@@ -98,7 +78,7 @@ struct TypesView: View {
 
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20)
-                                    .stroke(selectedTypes.contains(type) ? .black : .clear, lineWidth: 3)
+                                    .stroke(viewModel.selectedTypes.contains(type) ? .black : .clear, lineWidth: 3)
                                 )
                     }
                 }

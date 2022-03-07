@@ -10,6 +10,8 @@ import SwiftUI
 class EasyGameViewModel: ObservableObject {
     
     @Published var easyGame: EasyGame
+    
+    @Published var selectedGuess: String = ""
 
     var correctGuesses: Int {
         easyGame.guessCount.correct
@@ -85,13 +87,28 @@ class EasyGameViewModel: ObservableObject {
     
     func rightWrongText(optionalName: String) -> String {
         if let guessedName = easyGame.guesses[currentQuestion] {
-            // so guessedName is whatever is whatever the value of the Key >easyGame.guesses[currentQuestion]
+            // so guessedName is whatever the value is for the Key >easyGame.guesses[currentQuestion]
             if guessedName != optionalName {
                 return ""
             } else if guessedName == currentQuestion.name {
                 return "✅"
             } else {
                 return "❌"
+            }
+        } else {
+            return ""
+        }
+    }
+    
+    func correctAnswerNotification(optionalName: String) -> String {
+        if let guessedName = easyGame.guesses[currentQuestion] {
+            // so guessedName is whatever the value is for the Key >easyGame.guesses[currentQuestion]
+            if guessedName != optionalName {
+                return ""
+            } else if guessedName == currentQuestion.name {
+                return ""
+            } else {
+                return "The correct answer was: \(currentQuestion.name)"
             }
         } else {
             return ""

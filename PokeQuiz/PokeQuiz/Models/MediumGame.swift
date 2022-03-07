@@ -10,9 +10,9 @@ import Foundation
 struct MediumGame {
     
     private(set) var currentQuestionIndex = 0
-    var guesses = [PokemonTypes: [String]]()
+    var guesses = [Pokemon: [String]]()
     private(set) var isOver = false
-    private var pokemon = PokemonTypes.allPokemon.shuffled()
+    private var pokemon = Pokemon.allPokemon.shuffled()
     
 
     var guessCount: (correct: Int, incorrect: Int) {
@@ -30,7 +30,7 @@ struct MediumGame {
 
     var numberOfQuestions = 10
     
-    var currentQuestion: PokemonTypes {
+    var currentQuestion: Pokemon {
         pokemon[currentQuestionIndex]
     }
     

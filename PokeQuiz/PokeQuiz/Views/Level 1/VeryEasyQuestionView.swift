@@ -2,12 +2,12 @@
 //  EasyQuestionView.swift
 //  PokeQuiz
 //
-//  Created by Tanner Garlick on 2/12/22.
+//  Created by Tanner Garlick on 2/4/22.
 //
 
 import SwiftUI
 
-struct EasyQuestionView: View {
+struct VeryEasyQuestionView: View {
     
     @EnvironmentObject var viewModel: EasyGameViewModel
     
@@ -15,7 +15,7 @@ struct EasyQuestionView: View {
     
 //    let pokemon: [Pokemon]
 //    var pokemonShuffled: [Pokemon]
-//
+//    
 //    init() {
 //        self.pokemon = viewModel.pokemon
 //        self.pokemonShuffled = viewModel.pokemonShuffled
@@ -33,7 +33,7 @@ struct EasyQuestionView: View {
                     .foregroundColor(.white)
                     .bold()
                 Spacer()
-                SillouhetteView(selection: viewModel.pokemon[0].number)
+                PokemonImageViewEasy(selection: viewModel.pokemon[0].number)
                 Spacer()
                 VStack {
                     HStack {
@@ -43,8 +43,8 @@ struct EasyQuestionView: View {
                                 print(viewModel.pokemon)
                                 print(viewModel.pokemonShuffled)
                                 print(viewModel.easyGame.guesses)
-//                                print(viewModel.easyGame.guesses[viewModel.easyGame.currentQuestion[0]])
                                 viewModel.makeGuess(name: viewModel.pokemonShuffled[index].name)
+                                viewModel.selectedGuess = viewModel.pokemonShuffled[index].name
                             } label: {
                                 ButtonView(chosenText: viewModel.pokemonShuffled[index].name + " " + viewModel.rightWrongText(optionalName: viewModel.pokemonShuffled[index].name))
                             }
@@ -61,6 +61,7 @@ struct EasyQuestionView: View {
                                 print(viewModel.pokemonShuffled)
                                 print(viewModel.easyGame.guesses)
                                 viewModel.makeGuess(name: viewModel.pokemonShuffled[index].name)
+                                viewModel.selectedGuess = viewModel.pokemonShuffled[index].name
                             } label: {
                                 ButtonView(chosenText: viewModel.pokemonShuffled[index].name + " " + viewModel.rightWrongText(optionalName: viewModel.pokemonShuffled[index].name))
                         }
@@ -69,6 +70,7 @@ struct EasyQuestionView: View {
                             .disabled(viewModel.guessWasMade)
                       }
                     }
+                    Text(viewModel.correctAnswerNotification(optionalName: viewModel.selectedGuess))
                     
                     if viewModel.guessWasMade {
                         Button(action: { viewModel.displayNextScreen()
@@ -88,10 +90,9 @@ struct EasyQuestionView: View {
     }
 }
     
-struct EasyQuestionView_Previews: PreviewProvider {
+struct VeryEasyQuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        EasyQuestionView()
+        VeryEasyQuestionView()
             .environmentObject(EasyGameViewModel())
     }
 }
-

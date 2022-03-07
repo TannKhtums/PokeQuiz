@@ -15,7 +15,8 @@ struct VeryEasyGameView: View {
             BackgroundView()
             VStack {
                 Text(viewModel.questionProgressText)
-                    .font(.callout)
+                    .font(.headline).bold()
+                    .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
                     .padding()
                 VeryEasyQuestionView()

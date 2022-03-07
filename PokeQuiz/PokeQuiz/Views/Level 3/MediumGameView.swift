@@ -1,24 +1,25 @@
 //
-//  EasyGameView.swift
+//  MediumGameView.swift
 //  PokeQuiz
 //
-//  Created by Tanner Garlick on 2/12/22.
+//  Created by Tanner Garlick on 2/17/22.
 //
 
 import SwiftUI
 
-struct EasyGameView: View {
-    @StateObject var viewModel = EasyGameViewModel()
-
+struct MediumGameView: View {
+    @StateObject var viewModel = MediumGameViewModel()
+    
     var body: some View {
         ZStack {
             BackgroundView()
             VStack {
                 Text(viewModel.questionProgressText)
-                    .font(.callout)
+                    .font(.callout).bold()
+                    .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
                     .padding()
-                EasyQuestionView()
+                MediumQuestionView()
             }
             .navigationBarHidden(true)
             .environmentObject(viewModel)
@@ -32,8 +33,8 @@ struct EasyGameView: View {
     }
 }
 
-struct EasyGameView_Previews: PreviewProvider {
+struct MediumGameView_Previews: PreviewProvider {
     static var previews: some View {
-        EasyGameView()
+        MediumGameView()
     }
 }

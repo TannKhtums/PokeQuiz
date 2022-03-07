@@ -76,25 +76,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B338C24D27CD39B900C3BBF6 /* Sub Views */ = {
+			isa = PBXGroup;
+			children = (
+				B3D5C30727BC7E50002C2AE4 /* TypesView.swift */,
+				B3D5C30327B8AFEF002C2AE4 /* SillouhetteView.swift */,
+				B396925B27AE1AF000DAC5AE /* PokemonImageView.swift */,
+				B396925D27AE1CD800DAC5AE /* BackgroundView.swift */,
+				B396926127AF383B00DAC5AE /* ButtonView.swift */,
+				B396926A27B1FBDC00DAC5AE /* BottomTextView.swift */,
+				B3D5C2F927B73C6A002C2AE4 /* Test.swift */,
+			);
+			path = "Sub Views";
+			sourceTree = "<group>";
+		};
+		B338C24E27CD39E100C3BBF6 /* Level 1 */ = {
+			isa = PBXGroup;
+			children = (
+				B3FA3AB727B2AA7A00E0A833 /* VeryEasyGameView.swift */,
+				B396925727AE195600DAC5AE /* VeryEasyQuestionView.swift */,
+			);
+			path = "Level 1";
+			sourceTree = "<group>";
+		};
+		B338C24F27CD39EA00C3BBF6 /* Level 2 */ = {
+			isa = PBXGroup;
+			children = (
+				B3D5C30127B8AF68002C2AE4 /* EasyGameView.swift */,
+				B3D5C30527B8B2CC002C2AE4 /* EasyQuestionView.swift */,
+				B3FA3AB927B4A18200E0A833 /* EasyScoreView.swift */,
+			);
+			path = "Level 2";
+			sourceTree = "<group>";
+		};
+		B338C25027CD3A1300C3BBF6 /* Level 3 */ = {
+			isa = PBXGroup;
+			children = (
+				B3E9799427BF4BBA0068A833 /* MediumGameView.swift */,
+				B3E9798E27BDE97F0068A833 /* MediumQuestionView.swift */,
+			);
+			path = "Level 3";
+			sourceTree = "<group>";
+		};
 		B396925227ACD19900DAC5AE /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				B396925527ACD21900DAC5AE /* WelcomeScreen.swift */,
 				B3E7352C279D196D0099127F /* MainMenu.swift */,
-				B3FA3AB727B2AA7A00E0A833 /* VeryEasyGameView.swift */,
-				B3D5C30127B8AF68002C2AE4 /* EasyGameView.swift */,
-				B3D5C30527B8B2CC002C2AE4 /* EasyQuestionView.swift */,
-				B3FA3AB927B4A18200E0A833 /* EasyScoreView.swift */,
-				B3E9799427BF4BBA0068A833 /* MediumGameView.swift */,
-				B3E9798E27BDE97F0068A833 /* MediumQuestionView.swift */,
-				B3D5C30327B8AFEF002C2AE4 /* SillouhetteView.swift */,
-				B396925727AE195600DAC5AE /* VeryEasyQuestionView.swift */,
-				B396925B27AE1AF000DAC5AE /* PokemonImageView.swift */,
-				B3D5C30727BC7E50002C2AE4 /* TypesView.swift */,
-				B396925D27AE1CD800DAC5AE /* BackgroundView.swift */,
-				B396926127AF383B00DAC5AE /* ButtonView.swift */,
-				B396926A27B1FBDC00DAC5AE /* BottomTextView.swift */,
-				B3D5C2F927B73C6A002C2AE4 /* Test.swift */,
+				B338C24E27CD39E100C3BBF6 /* Level 1 */,
+				B338C24F27CD39EA00C3BBF6 /* Level 2 */,
+				B338C25027CD3A1300C3BBF6 /* Level 3 */,
+				B338C24D27CD39B900C3BBF6 /* Sub Views */,
 			);
 			path = Views;
 			sourceTree = "<group>";

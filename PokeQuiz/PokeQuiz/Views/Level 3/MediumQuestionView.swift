@@ -36,14 +36,19 @@ struct MediumQuestionView: View {
                             }
                         Button {
                             print("submit")
-                            viewModel.makeGuess(typesArr: ["test"])
+                            viewModel.makeGuess(typesArr: viewModel.alphabetizedTypesArr(array: viewModel.selectedTypes))
+                            print(viewModel.selectedTypes)
                         } label: {
-                            ButtonView(chosenText: "Submit Answer")
+                            ButtonView(chosenText: "Submit Answer" + " " + viewModel.rightWrongText(optionalArr: viewModel.alphabetizedTypesArr(array: viewModel.selectedTypes)))
                         }
                         
+                        Text(viewModel.correctAnswerNotification(optionalName: viewModel.pokemon.type))
+                        
                         if viewModel.guessWasMade {
-                            Button(action: { viewModel.displayNextScreen()
+                            Button(action: {
+                                viewModel.displayNextScreen()
                                 viewModel.assignNextQuestion()
+                                viewModel.selectedTypes = []
                                 print(viewModel.pokemon)
                             }) {
                                 BottomTextView(str: "Next")

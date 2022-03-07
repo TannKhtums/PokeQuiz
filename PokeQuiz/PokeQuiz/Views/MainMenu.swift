@@ -25,7 +25,7 @@ struct MainMenu: View {
                         NavigationLink(destination: EasyGameView()) {
                                 PokemonImageView(selection: "002")
                             }
-                        NavigationLink(destination: MediumQuestionView()) {
+                        NavigationLink(destination: MediumGameView()) {
                                 PokemonImageView(selection: "003")
                             }
                     Spacer()

@@ -11,9 +11,7 @@ import SwiftUI
 struct PokeQuizApp: App {
     var body: some Scene {
         WindowGroup {
-//            WelcomeScreen()
-            TypesView()
-                .environmentObject(MediumGameViewModel())
+            WelcomeScreen()
         }
     }
 }

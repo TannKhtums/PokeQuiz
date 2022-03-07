@@ -31,14 +31,16 @@ struct EasyGame {
     var numberOfQuestions = 10
     
     var currentQuestion: [Pokemon] { [
-        pokemon[currentQuestionIndex],
-        pokemon[currentQuestionIndex + 1],
-        pokemon[currentQuestionIndex + 2],
-        pokemon[currentQuestionIndex + 3]
+        pokemon[0],
+        pokemon[1],
+        pokemon[2],
+        pokemon[3]
     ]
     }
     
     mutating func reshufflePokemonAfterGuess() {
+        print("Current Array:", pokemon[0].name, pokemon[1].name, pokemon[2].name, pokemon[3].name)
+        pokemon.removeFirst(1)
         pokemon = pokemon.shuffled()
     }
     
