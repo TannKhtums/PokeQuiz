@@ -21,7 +21,7 @@ struct EasyGameView: View {
                     .padding()
                 EasyQuestionView()
             }
-            .navigationBarHidden(true)
+//            .navigationBarHidden(true)
             .environmentObject(viewModel)
         }
         .background(

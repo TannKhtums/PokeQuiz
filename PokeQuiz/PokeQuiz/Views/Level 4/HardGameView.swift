@@ -1,14 +1,14 @@
 //
-//  MediumGameView.swift
+//  Level4GameView.swift
 //  PokeQuiz
 //
-//  Created by Tanner Garlick on 2/17/22.
+//  Created by Tanner Garlick on 3/9/22.
 //
 
 import SwiftUI
 
-struct MediumGameView: View {
-    @StateObject var viewModel = MediumGameViewModel()
+struct HardGameView: View {
+    @StateObject var viewModel = HardViewModel()
     
     var body: some View {
         ZStack {
@@ -19,9 +19,9 @@ struct MediumGameView: View {
                     .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
                     .padding()
-                MediumQuestionView()
+                HardQuestionView()
             }
-//            .navigationBarHidden(true)
+            .navigationBarHidden(true)
             .environmentObject(viewModel)
         }
         .background(
@@ -33,8 +33,8 @@ struct MediumGameView: View {
     }
 }
 
-struct MediumGameView_Previews: PreviewProvider {
+struct HardGameView_Previews: PreviewProvider {
     static var previews: some View {
-        MediumGameView()
+        HardGameView()
     }
 }

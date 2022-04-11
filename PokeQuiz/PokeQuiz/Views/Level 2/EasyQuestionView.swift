@@ -71,6 +71,7 @@ struct EasyQuestionView: View {
                           }
                         }
                     Text(viewModel.correctAnswerNotification(optionalName: viewModel.selectedGuess))
+                        .padding()
                                         
                     if viewModel.guessWasMade {
                         Button(action: { viewModel.displayNextScreen()

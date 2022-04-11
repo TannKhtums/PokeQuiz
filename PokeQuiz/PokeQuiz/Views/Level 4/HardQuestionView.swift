@@ -1,15 +1,15 @@
 //
-//  MediumQuestionView.swift
+//  Level4QuestionView.swift
 //  PokeQuiz
 //
-//  Created by Tanner Garlick on 2/16/22.
+//  Created by Tanner Garlick on 3/9/22.
 //
 
 import SwiftUI
 
-struct MediumQuestionView: View {
+struct Level4QuestionView: View {
 
-    @EnvironmentObject var viewModel: MediumGameViewModel
+    @EnvironmentObject var viewModel: HardViewModel
 
     
     var body: some View {
@@ -19,7 +19,7 @@ struct MediumQuestionView: View {
                 VStack {
                     Spacer()
                     Spacer()
-                    Text("Select the correct type(s):")
+                    Text("What are this Pokemon's weaknesses?")
                         .font(.largeTitle)
                         .foregroundColor(.white)
                         .bold()
@@ -29,7 +29,7 @@ struct MediumQuestionView: View {
                         .padding()
                     Spacer()
                     VStack {
-                        TypesView()
+                        HardTypesView()
                             .padding()
                             .onTapGesture {
                                 print(viewModel.selectedTypes)
@@ -38,14 +38,12 @@ struct MediumQuestionView: View {
                             print("submit")
                             viewModel.makeGuess(typesArr: viewModel.alphabetizedTypesArr(array: viewModel.selectedTypes))
                             print(viewModel.selectedTypes)
-                            print("Weakness Array: \(viewModel.pokemon.weaknesses), Super Weakness: \(viewModel.pokemon.superWeaknesses), Resistance: \(viewModel.pokemon.resistance), Super Resistance: \(viewModel.pokemon.superResistance)")
                         } label: {
                             ButtonView(chosenText: "Submit Answer" + " " + viewModel.rightWrongText())
                         }
                         .background(viewModel.color())
                         
                         Text(viewModel.correctAnswerNotification())
-                            .padding()
                         
                         if viewModel.guessWasMade {
                             Button(action: {
@@ -67,9 +65,10 @@ struct MediumQuestionView: View {
     }
 }
 
-struct MediumQuestionView_Previews: PreviewProvider {
+
+struct Level4QuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        MediumQuestionView().environmentObject(MediumGameViewModel())
-//        YourView().environmentObject(yourEnvironmentObject)
+        Level4QuestionView().environmentObject(HardViewModel())
+        //        YourView().environmentObject(yourEnvironmentObject)
     }
 }
