@@ -12,19 +12,34 @@ struct MediumGame {
     private(set) var currentQuestionIndex = 0
     var guesses = [Pokemon: [String]]()
     private(set) var isOver = false
-    private var pokemon = Pokemon.allPokemon.shuffled()
+    private var pokemon: [Pokemon] = []
+    
+    init() {
+        if let savedSelectedPokemonArr = UserDefaults.standard.data(forKey: "selectedPokemonArr") {
+            if let loadedSelectedPokemonArr = try? JSONDecoder().decode([Pokemon].self, from: savedSelectedPokemonArr) {
+                self.pokemon = loadedSelectedPokemonArr.shuffled()
+            }
+        }
+    }
     
 
     var guessCount: (correct: Int, incorrect: Int) {
         var count: (correct: Int, incorrect: Int) = (0,0)
+        
+        func alphabetizedTypesArrCorrectAnswer(array: [String]) -> [String] {
+            let alphabetizedArr = array.sorted()
+            return alphabetizedArr
+        }
+
         for (pokemon, guessedTypes) in guesses {
             // pokemon, guessedName are the assigned names for the dictionary pairs in guesses that I'm looping over
-            if pokemon.type == guessedTypes {
+            if pokemon.type.sorted() == guessedTypes {
                 count.correct += 1
             } else {
                 count.incorrect += 1
             }
         }
+        
         return count
     }
 
@@ -34,9 +49,10 @@ struct MediumGame {
         pokemon[currentQuestionIndex]
     }
     
-    mutating func reshufflePokemonAfterGuess() {
-        pokemon = pokemon.shuffled()
-    }
+//    mutating func alphabetizedTypesArrCorrectAnswer (array: [String]) -> [String] {
+//        let alphabetizedArr = array.sorted()
+//        return alphabetizedArr
+//    }
     
     mutating func makeGuessForCurrentQuestion(typesArr: [String]) {
         guesses[(currentQuestion)] = typesArr

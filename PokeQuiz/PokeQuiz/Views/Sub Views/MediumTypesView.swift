@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TypesView: View {
-    
+    @AppStorage("isDarkMode") var isDarkMode = false
     @EnvironmentObject var viewModel: MediumGameViewModel
 
     let typesArr = ["Normal", "Fire", "Water", "Grass", "Electric", "Ice", "Fighting", "Poison", "Ground", "Flying", "Bug", "Psychic", "Rock", "Ghost", "Dark", "Dragon", "Steel", "Fairy"]
@@ -78,7 +78,7 @@ struct TypesView: View {
 
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20)
-                                    .stroke(viewModel.selectedTypes.contains(type) ? .black : .clear, lineWidth: 3)
+                                    .stroke(viewModel.selectedTypes.contains(type) ? (isDarkMode ? .white : .black) : .clear, lineWidth: 3)
                                 )
                     }
                 }

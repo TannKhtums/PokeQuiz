@@ -8,20 +8,26 @@
 import SwiftUI
 
 struct ButtonView: View {
+    @AppStorage("isDarkMode") var isDarkMode = false
+
     let chosenText: String
     
     var body: some View {
         Text(chosenText)
+            .foregroundColor(isDarkMode ? .white : .black)
             .font(.body)
             .bold()
-            .multilineTextAlignment(.center)
             .padding()
             .border(.red, width: 4)
+            .multilineTextAlignment(.center)
     }
 }
 
 struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonView(chosenText: "Test")
+        Group {
+            ButtonView(chosenText: "Test")
+            ButtonView(chosenText: "Test")
+        }
     }
 }

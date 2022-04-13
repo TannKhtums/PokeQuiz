@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Level4QuestionView: View {
+struct HardQuestionView: View {
 
     @EnvironmentObject var viewModel: HardViewModel
 
@@ -44,6 +44,8 @@ struct Level4QuestionView: View {
                         .background(viewModel.color())
                         
                         Text(viewModel.correctAnswerNotification())
+                            .multilineTextAlignment(.center)
+                            .padding()
                         
                         if viewModel.guessWasMade {
                             Button(action: {
@@ -66,9 +68,9 @@ struct Level4QuestionView: View {
 }
 
 
-struct Level4QuestionView_Previews: PreviewProvider {
+struct HardQuestionView_Previews: PreviewProvider {
     static var previews: some View {
-        Level4QuestionView().environmentObject(HardViewModel())
+        HardQuestionView().environmentObject(HardViewModel())
         //        YourView().environmentObject(yourEnvironmentObject)
     }
 }

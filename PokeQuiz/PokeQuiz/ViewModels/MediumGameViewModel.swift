@@ -8,6 +8,8 @@
 import SwiftUI
 
 class MediumGameViewModel: ObservableObject {
+    @AppStorage("isDarkMode") var isDarkMode = false
+
     
     @Published var mediumGame: MediumGame
     //whenever mediumGame is changed, publish those changes to anything listening
@@ -53,10 +55,14 @@ class MediumGameViewModel: ObservableObject {
         mediumGame.isOver
     }
     
+//    func alphabetizedTypesArr(array: [String]) -> [String] {
+//        mediumGame.alphabetizedTypesArr(array: array)
+//    }
+    
     func alphabetizedTypesArr(array: [String]) -> [String] {
-        let alphabetizedArr = array.sorted()
-        return alphabetizedArr
-    }
+            let alphabetizedArr = array.sorted()
+            return alphabetizedArr
+        }
     
     func trimArray() {
         if selectedTypes.count > 2 {
@@ -89,28 +95,23 @@ class MediumGameViewModel: ObservableObject {
         self.pokemon = mediumGame.currentQuestion
     }
     
-    func color(optionalArr: [String]) -> Color {
+    func color() -> Color {
         if let guessedArr = mediumGame.guesses[currentQuestion] {
             // so guessedName is whatever the value of the Key >easyGame.guesses[currentQuestion]
-            if guessedArr != optionalArr {
-                return Color.white
-            } else if guessedArr == alphabetizedTypesArr(array: currentQuestion.type) {
+            if guessedArr == alphabetizedTypesArr(array: currentQuestion.type) {
                 return Color.green.opacity(0.5)
-
             } else {
                 return Color.red.opacity(0.5)
             }
         } else {
-            return Color.white
+            return (isDarkMode ? Color.black : Color.white)
         }
     }
     
-    func rightWrongText(optionalArr: [String]) -> String {
+    func rightWrongText() -> String {
         if let guessedArr = mediumGame.guesses[currentQuestion] {
             // so guessedArr is whatever is whatever the value of the Key >easyGame.guesses[currentQuestion]
-            if guessedArr != optionalArr {
-                return ""
-            } else if guessedArr == alphabetizedTypesArr(array: currentQuestion.type) {
+            if guessedArr == alphabetizedTypesArr(array: currentQuestion.type) {
                 return "✅"
             } else {
                 return "❌"
@@ -121,19 +122,17 @@ class MediumGameViewModel: ObservableObject {
     }
     
     
-    func correctAnswerNotification(optionalName: [String]) -> String {
+    func correctAnswerNotification() -> String {
         if let guessedTypes = mediumGame.guesses[currentQuestion] {
             // so guessedName is whatever the value is for the Key >easyGame.guesses[currentQuestion]
-            if guessedTypes != optionalName {
-                if currentQuestion.type.count < 2 {
-                    return "The correct answer was: \(currentQuestion.type[0])"
-                } else {
-                    return "The correct answer was: \(currentQuestion.type[0]), \(currentQuestion.type[1])"
-                }
-            } else if guessedTypes == alphabetizedTypesArr(array: currentQuestion.type) {
+            if guessedTypes == alphabetizedTypesArr(array: currentQuestion.type) {
                 return ""
             } else {
-                return ""
+                if currentQuestion.type.count < 2 {
+                    return "\(currentQuestion.name)'s type is \(currentQuestion.type[0])"
+                } else {
+                    return "\(currentQuestion.name)'s types are \(currentQuestion.type[0]) and \(currentQuestion.type[1])"
+                }
             }
         } else {
             return ""

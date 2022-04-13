@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct PokeQuizApp: App {
+    @StateObject var test = SettingsViewModel()
+    @AppStorage("isDarkMode") var isDarkMode = false
+
     var body: some Scene {
         WindowGroup {
-            WelcomeScreen()
+            WelcomeScreen().environmentObject(test)
+                .preferredColorScheme(isDarkMode ? .dark : .light)
+//            RegionSettingsTest()
         }
     }
 }

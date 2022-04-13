@@ -8,17 +8,31 @@
 import SwiftUI
 
 struct BackgroundView: View {
+    @AppStorage("isDarkMode") var isDarkMode = false
+    
+//    let darkRed = Color(red: 0.0, green: 0.0, blue: 0.67)
+    let darkBackground = Color(hue: 225/360, saturation: 0.1, brightness: 0.25)
     
     var body: some View {
-        VStack {
-            GeometryReader { geo in
-                Rectangle()
-                    .fill(.red)
-                    .frame(width: geo.size.width * 1.0, height: geo.size.height * 0.33)
+        NavigationView {
+            VStack {
+                    GeometryReader { geo in
+                        Rectangle()
+                            .fill(isDarkMode ? darkBackground : .red)
+                            .frame(width: geo.size.width * 1.0, height: geo.size.height * 0.33)
+                        
 
+                    }
+                        .ignoresSafeArea()
+
+                Spacer()
             }
-                .ignoresSafeArea()
-            Spacer()
+            
+//            .toolbar {
+//                Button(Image(systemName: "house")) {
+//                    print("test")
+//                }
+//            }
         }
 
         }
@@ -29,3 +43,25 @@ struct BackgroundView_Previews: PreviewProvider {
         BackgroundView()
     }
 }
+
+//                        Image(systemName: "house")
+//                        .imageScale(.large)
+//                        .foregroundColor(.black)
+//                        .offset(x: 300, y: 100)
+
+//            VStack {
+//                HStack {
+//                    Spacer()
+//                    Spacer()
+//                    Spacer()
+//                    Spacer()
+//                    Spacer()
+//                    Spacer()
+//                    Spacer()
+//                    Image(systemName: "house")
+//                    .imageScale(.large)
+//                    .foregroundColor(.black)
+//                    Spacer()
+//                }
+//                Spacer()
+//            }

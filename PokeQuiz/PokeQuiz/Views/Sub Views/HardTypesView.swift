@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-struct Level4TypesView: View {
+struct HardTypesView: View {
     
     @EnvironmentObject var viewModel: HardViewModel
+    @AppStorage("isDarkMode") var isDarkMode = false
+
 
     let typesArr = ["Normal", "Fire", "Water", "Grass", "Electric", "Ice", "Fighting", "Poison", "Ground", "Flying", "Bug", "Psychic", "Rock", "Ghost", "Dark", "Dragon", "Steel", "Fairy"]
    
@@ -76,7 +78,7 @@ struct Level4TypesView: View {
 
                             .overlay(
                                 RoundedRectangle(cornerRadius: 20)
-                                    .stroke(viewModel.selectedTypes.contains(type) ? .black : .clear, lineWidth: 3)
+                                    .stroke(viewModel.selectedTypes.contains(type) ? (isDarkMode ? .white : .black) : .clear, lineWidth: 3)
                                 )
                     }
                 }
@@ -89,7 +91,7 @@ struct Level4TypesView: View {
 
 struct Level4TypesView_Previews: PreviewProvider {
     static var previews: some View {
-        Level4TypesView()
+        HardTypesView()
             .environmentObject(HardViewModel())
     }
 }

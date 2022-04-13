@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct Level4MockDataModel: View {
+struct TypeCalcMockDataModel: View {
     @State var currentTypes: [String: Double] = [
         "Normal": 1.0,
         "Fire": 1.0,
@@ -444,8 +444,8 @@ struct Level4MockDataModel: View {
     }
 }
 
-struct Level4MockDataModel_Previews: PreviewProvider {
+struct TypeCalcMockDataModel_Previews: PreviewProvider {
     static var previews: some View {
-        Level4MockDataModel()
+        TypeCalcMockDataModel()
     }
 }

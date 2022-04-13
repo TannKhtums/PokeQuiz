@@ -5,10 +5,12 @@
 //  Created by Tanner Garlick on 2/5/22.
 //
 
+import Combine
 import SwiftUI
 
 class EasyGameViewModel: ObservableObject {
-    
+    @AppStorage("isDarkMode") var isDarkMode = false
+
     @Published var easyGame: EasyGame
     
     @Published var selectedGuess: String = ""
@@ -26,9 +28,13 @@ class EasyGameViewModel: ObservableObject {
     }
     
     var pokemon: [Pokemon]
+    
     var pokemonShuffled: [Pokemon]
     // see if I can connect these variables to EasyGame so that when they are changed it changes the view too
     
+//    init(prefs: UserPreferences) {
+//        self.userPrefs = prefs
+//        }
     
     init() {
         let easyGame = EasyGame()
@@ -73,7 +79,7 @@ class EasyGameViewModel: ObservableObject {
         if let guessedName = easyGame.guesses[currentQuestion] {
             // so guessedName is whatever is whatever the value of the Key >easyGame.guesses[currentQuestion]
             if guessedName != optionalName {
-                return Color.white
+                return (isDarkMode ? Color.black : Color.white)
             } else if guessedName == currentQuestion.name {
                 return Color.green.opacity(0.5)
 
@@ -81,7 +87,7 @@ class EasyGameViewModel: ObservableObject {
                 return Color.red.opacity(0.5)
             }
         } else {
-            return Color.white
+            return (isDarkMode ? Color.black : Color.white)
         }
     }
     
@@ -108,7 +114,7 @@ class EasyGameViewModel: ObservableObject {
             } else if guessedName == currentQuestion.name {
                 return ""
             } else {
-                return "The correct answer was: \(currentQuestion.name)"
+                return "That Pokemon is: \(currentQuestion.name)"
             }
         } else {
             return ""

@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct SmallSillouetteView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    @AppStorage("isDarkMode") var isDarkMode = false
+
+        var selection: String
+
+        var body: some View {
+            VStack {
+                Rectangle()
+                    .foregroundColor(isDarkMode ? .white : .black)
+                    .frame(width: 50, height: 50)
+                    .mask(
+                        Image(selection)
+                            .resizable()
+                            .frame(width: 50, height: 50)
+                    )
+            }
+        }
     }
-}
 
 struct SmallSillouetteView_Previews: PreviewProvider {
     static var previews: some View {
-        SmallSillouetteView()
+        SmallSillouetteView(selection: "001")
     }
 }

@@ -21,7 +21,7 @@ struct HardGameView: View {
                     .padding()
                 HardQuestionView()
             }
-            .navigationBarHidden(true)
+//            .navigationBarHidden(true)
             .environmentObject(viewModel)
         }
         .background(

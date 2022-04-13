@@ -6,15 +6,25 @@
 //
 
 import Foundation
+import SwiftUI
 
 struct EasyGame {
     
     private(set) var currentQuestionIndex = 0
     var guesses = [Pokemon: String]()
     private(set) var isOver = false
-    private var pokemon = Pokemon.allPokemon.shuffled()
-    
+    var pokemon: [Pokemon] = []
 
+//    private var pokemon = Pokemon.allPokemon.shuffled()
+    
+    init() {
+        if let savedSelectedPokemonArr = UserDefaults.standard.data(forKey: "selectedPokemonArr") {
+            if let loadedSelectedPokemonArr = try? JSONDecoder().decode([Pokemon].self, from: savedSelectedPokemonArr) {
+                self.pokemon = loadedSelectedPokemonArr.shuffled()
+            }
+        }
+    }
+    
     var guessCount: (correct: Int, incorrect: Int) {
         var count: (correct: Int, incorrect: Int) = (0,0)
         for (pokemon, guessedName) in guesses {

@@ -7,6 +7,39 @@
 
 import SwiftUI
 
+struct GearPokemonView: View {
+    @AppStorage("isDarkMode") var isDarkMode = false
+
+    var body: some View {
+        VStack {
+            Rectangle()
+                .foregroundColor(isDarkMode ? .white : .black)
+                .frame(width: 50, height: 50)
+                .mask(
+                    Image("600")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                )
+        }
+    }}
+
+struct LunatoneImageView: View {
+    var body: some View {
+        Image("337")
+                .resizable()
+                .frame(width: 45, height: 45)
+    }
+}
+
+struct SolRockImageView: View {
+    var body: some View {
+        Image("338")
+                .resizable()
+                .frame(width: 55, height: 55)
+    }
+}
+
+
 
 struct PokemonImageView: View {
     var selection: String
@@ -54,6 +87,8 @@ struct PokemonImageView_Previews: PreviewProvider {
     static var previews: some View {
         ScrollView {
             VStack {
+                LunatoneImageView()
+                SolRockImageView()
                 PokemonImageView(selection: "001")
                 PokemonImageViewEasy(selection: "001")
                 PokemonImageViewMedium(selection: "001")

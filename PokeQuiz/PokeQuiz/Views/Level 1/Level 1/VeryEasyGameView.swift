@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct VeryEasyGameView: View {
+    
     @StateObject var viewModel = EasyGameViewModel()
 
     var body: some View {
@@ -21,7 +22,7 @@ struct VeryEasyGameView: View {
                     .padding()
                 VeryEasyQuestionView()
             }
-            .navigationBarHidden(true)
+//            .navigationBarHidden(true)
             .environmentObject(viewModel)
         }
         .background(

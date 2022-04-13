@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct MainMenu: View {
-    @StateObject var viewModel = SettingsViewModel()
+    @EnvironmentObject var viewModel: SettingsViewModel
+    @AppStorage("isDarkMode") var isDarkMode = false
+
+//    @StateObject var viewModel = SettingsViewModel()
 
     @State private var experiencePoints = 0
     @State private var showingSettings = false
@@ -39,7 +42,7 @@ struct MainMenu: View {
                             .foregroundColor(.white)
                             .font(.title)
                             .padding()
-                        
+
                         if viewModel.selectedStyle == .green {
                             NavigationLink(destination: VeryEasyGameView()) {
                                     PokemonImageView(selection: "green_egg")
@@ -116,18 +119,19 @@ struct MainMenu: View {
                 Button {
                     showingSettings.toggle()
                 } label: {
-                    Image(systemName: "gear")
-                        .foregroundColor(.black)
+                    GearPokemonView()
                 }
             }
             .sheet(isPresented: $showingSettings) {
                 SettingsView()
                     .environmentObject(viewModel)
-
-            }
+            }.preferredColorScheme(isDarkMode ? .dark : .light)
         }
         .environmentObject(viewModel)
         .navigationBarHidden(true)
+//        .onAppear(perform: {
+//            viewModel.settingsShownForFirstTime = false
+//        })
     }
 }
 //    .environmentObject(SettingsViewModel())

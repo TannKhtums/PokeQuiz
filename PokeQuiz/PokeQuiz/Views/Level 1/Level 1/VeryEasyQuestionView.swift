@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct VeryEasyQuestionView: View {
-    
+
     @EnvironmentObject var viewModel: EasyGameViewModel
     
     //We also took advantage of EnvironmentObject to get access to the view model which allows the question view to update the quiz when a user guesses.
@@ -48,7 +48,6 @@ struct VeryEasyQuestionView: View {
                             } label: {
                                 ButtonView(chosenText: viewModel.pokemonShuffled[index].name + " " + viewModel.rightWrongText(optionalName: viewModel.pokemonShuffled[index].name))
                             }
-                            .foregroundColor(.black)
                             .background(viewModel.color(optionalName: viewModel.pokemonShuffled[index].name))
                             .disabled(viewModel.guessWasMade)
                       }
@@ -65,12 +64,12 @@ struct VeryEasyQuestionView: View {
                             } label: {
                                 ButtonView(chosenText: viewModel.pokemonShuffled[index].name + " " + viewModel.rightWrongText(optionalName: viewModel.pokemonShuffled[index].name))
                         }
-                            .foregroundColor(.black)
                             .background(viewModel.color(optionalName: viewModel.pokemonShuffled[index].name))
                             .disabled(viewModel.guessWasMade)
                       }
                     }
                     Text(viewModel.correctAnswerNotification(optionalName: viewModel.selectedGuess))
+                        .padding()
                     
                     if viewModel.guessWasMade {
                         Button(action: { viewModel.displayNextScreen()

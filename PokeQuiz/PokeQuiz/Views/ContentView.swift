@@ -7,9 +7,26 @@
 
 import SwiftUI
 
+extension UserDefaults {
+    var welcomeScreenShown: Bool {
+        get {
+            return (UserDefaults.standard.value(forKey: "welcomeScreenShown") as? Bool) ?? false
+            // as? Bool is casting? Not sure what casting means, "that value will be cast to any object, but if casting fails then we'll default to false"
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: "welcomeScreenShown")
+        }
+    }
+}
+
 struct ContentView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//        if UserDefaults.standard.welcomeScreenShown {
+//            WelcomeScreen()
+//        } else {
+//            WelcomeScreen()
+//        }
+        WelcomeScreen()
     }
 }
 
@@ -18,3 +35,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+

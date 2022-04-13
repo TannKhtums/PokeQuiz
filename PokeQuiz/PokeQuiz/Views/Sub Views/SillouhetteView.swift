@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct SillouhetteView: View {
+    @AppStorage("isDarkMode") var isDarkMode = false
+    
+    let darkModeSilhouetteColor = Color(hue: 225/360, saturation: 0.1, brightness: 1)
+
+
     var selection: String
 
     var body: some View {
         VStack {
             Rectangle()
-                .foregroundColor(.black)
+                .foregroundColor(isDarkMode ? darkModeSilhouetteColor : .black)
                 .frame(width: 300, height: 300)
                 .mask(
                     Image(selection)
