@@ -14,8 +14,6 @@ struct EasyGame {
     var guesses = [Pokemon: String]()
     private(set) var isOver = false
     var pokemon: [Pokemon] = []
-
-//    private var pokemon = Pokemon.allPokemon.shuffled()
     
     init() {
         if let savedSelectedPokemonArr = UserDefaults.standard.data(forKey: "selectedPokemonArr") {

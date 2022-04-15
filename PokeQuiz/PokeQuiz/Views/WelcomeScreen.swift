@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WelcomeScreen: View {
     @AppStorage("isDarkMode") var isDarkMode = false
-    @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = true
+//    @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = true
     
     let darkModeSilhouetteColor = Color(hue: 225/360, saturation: 0.1, brightness: 1)
     @EnvironmentObject var viewModel: SettingsViewModel
