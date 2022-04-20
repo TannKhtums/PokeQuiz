@@ -22,7 +22,7 @@ struct VeryEasyGameView: View {
                     .padding()
                 VeryEasyQuestionView()
             }
-//            .navigationBarHidden(true)
+            .navigationBarHidden(true)
             .environmentObject(viewModel)
         }
         .background(

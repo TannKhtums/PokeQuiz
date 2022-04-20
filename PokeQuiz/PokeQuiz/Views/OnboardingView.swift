@@ -8,125 +8,25 @@
 import SwiftUI
 
 struct OnboardingView: View {
-    @Binding var shouldShowOnboarding: Bool
+    @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = true
     @EnvironmentObject var viewModel: SettingsViewModel
-    // dev change again
-    var body: some View {
-        TabView {
-            PageView(
-                title: "Bulbasaur",
-                text: "Test",
-                image: "001",
-                showDismissButton: false,
-                shouldShowOnboarding: $shouldShowOnboarding
-            )
-            
-            PageView(
-                title: "Bulbasaur",
-                text: "Test",
-                image: "002",
-                showDismissButton: true,
-                shouldShowOnboarding: $shouldShowOnboarding
-            )
-            WelcomeSettingsView(
-                shouldShowOnboarding: $shouldShowOnboarding
-            ).environmentObject(viewModel)
-
-        }
-        .tabViewStyle(PageTabViewStyle())
-        //allows you to swipe between tab pages
+    
+    init() {
+        UIPageControl.appearance().currentPageIndicatorTintColor = .darkGray
+        UIPageControl.appearance().pageIndicatorTintColor = .lightGray
+        UIPageControl.appearance().tintColor = .lightGray
     }
-}
-
-struct PageView: View {
-    let title: String
-    let text: String
-    let image: String
-    let showDismissButton: Bool
-    @Binding var shouldShowOnboarding: Bool
     
     var body: some View {
-        VStack {
-            PokemonImageView(selection: image)
-                .padding()
-            Text(title)
-                .font(.system(size: 32))
-                .padding()
-            Text(text)
-                .font(.system(size: 32))
-                .padding()
-            
-            if showDismissButton {
-                Button(action: {
-                    shouldShowOnboarding.toggle()
-                }, label: {
-                    Text("Done")
-                        .bold()
-                        .foregroundColor(Color.white)
-                        .frame(width: 200, height: 50)
-                        .background(Color.green)
-                })
-            }
+        TabView {
+            Onboarding_1()
+            Onboarding_2()
+            Onboarding_3()
+            Onboarding_4()
+            Onboarding_5()
         }
+        .tabViewStyle(PageTabViewStyle())
     }
 }
 
-
-struct WelcomeSettingsView: View {
-    @EnvironmentObject var viewModel: SettingsViewModel
-    @Binding var shouldShowOnboarding: Bool
-
-    var body: some View {
-        VStack {
-            Form {
-                Section {
-                    Text("What's your preferred color?")
-                    Picker("Level Style", selection: $viewModel.selectedStyle) {
-                        ForEach(SettingsViewModel.LevelStyle.allCases) { style in
-                            Text(style.rawValue.capitalized)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                    .padding([.leading, .trailing])
-                }
-                HStack {
-                    Text("Who's your favorite Pokemon?")
-                    Spacer()
-                    Picker("Favorite Pokemon", selection: $viewModel.selectedPokemon) {
-                        ForEach(viewModel.pokemonArr, id: \.self) {
-                                Text($0.name)
-                            }
-                        }
-                    .pickerStyle(.menu)
-                }
-                HStack {
-                    Spacer()
-                    PokemonImageView(selection: viewModel.selectedPokemon.number)
-                    Spacer()
-                }
-                
-                HStack {
-                    Spacer()
-                    Button(action: {
-                        shouldShowOnboarding.toggle()
-                    }, label: {
-                        Text("Done")
-                            .bold()
-                            .foregroundColor(Color.white)
-                            .frame(width: 200, height: 50)
-                            .background(Color.green)
-                            .cornerRadius(6)
-                            .padding()
-
-                    })
-                    Spacer()
-                }
-
-            }
-
-        }
- 
-
-    }
-}
 
