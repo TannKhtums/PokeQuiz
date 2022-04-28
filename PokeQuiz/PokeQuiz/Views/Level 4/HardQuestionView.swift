@@ -11,7 +11,8 @@ struct HardQuestionView: View {
 
     @EnvironmentObject var viewModel: HardViewModel
 
-    
+    @AppStorage("isDarkMode") var isDarkMode = false
+        
     var body: some View {
         ZStack{
             BackgroundView()
@@ -21,9 +22,12 @@ struct HardQuestionView: View {
                     Spacer()
                     Text("What are this Pokemon's weaknesses?")
                         .font(.largeTitle)
-                        .foregroundColor(.white)
                         .bold()
+                        .foregroundColor(.white)
                         .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(isDarkMode ? darkBackgrounColor.darkBackground : Color.red)
+//                        .background(Color.red)
                     Spacer()
                     PokemonImageViewMedium(selection: viewModel.pokemon.number)
                         .padding()
@@ -58,7 +62,6 @@ struct HardQuestionView: View {
                             }
                         }
                     }
-                    Spacer()
                     Spacer()
                     Spacer()
                 }

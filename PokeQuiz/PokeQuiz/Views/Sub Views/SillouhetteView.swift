@@ -17,18 +17,22 @@ struct SillouhetteView: View {
 
     var body: some View {
         VStack {
-            Rectangle()
-                .foregroundColor(isDarkMode ? darkModeSilhouetteColor : .black)
-                .frame(width: 300, height: 300)
-                .mask(
-                    Image(selection)
-                        .resizable()
-                        .frame(width: 300, height: 300)
-                )
-                .padding()
-                .background(.regularMaterial)
-//                .shadow(radius: 5)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
+//            GeometryReader { geo in
+                Rectangle()
+                    .foregroundColor(isDarkMode ? darkModeSilhouetteColor : .black)
+//                    .frame(width: geo.size.width * 0.7, height: geo.size.width * 0.7)
+                    .frame(width: 300, height: 300)
+                    .mask(
+                        Image(selection)
+                            .resizable()
+                            .scaledToFit()
+//                            .frame(width: geo.size.width * 0.7, height: geo.size.width * 0.7)
+                    )
+                    .padding()
+                    .background(.regularMaterial)
+    //                .shadow(radius: 5)
+                    .clipShape(RoundedRectangle(cornerRadius: 20))
+//            }
         }
     }
 }

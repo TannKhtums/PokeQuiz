@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B32BF251280DADDF00AE38BA /* PokemonLevelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B32BF250280DADDF00AE38BA /* PokemonLevelView.swift */; };
+		B3781AED2810329F00B4ADA1 /* LevelNavigationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3781AEC2810329F00B4ADA1 /* LevelNavigationButtonView.swift */; };
 		B388AE7127D8E27C00E523FE /* HardGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B388AE7027D8E27C00E523FE /* HardGameView.swift */; };
 		B388AE7327D8E29100E523FE /* HardQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B388AE7227D8E29100E523FE /* HardQuestionView.swift */; };
 		B388AE7527D8E31300E523FE /* HardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B388AE7427D8E31300E523FE /* HardViewModel.swift */; };
@@ -36,6 +38,8 @@
 		B3D5C30427B8AFEF002C2AE4 /* SillouhetteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5C30327B8AFEF002C2AE4 /* SillouhetteView.swift */; };
 		B3D5C30627B8B2CC002C2AE4 /* EasyQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5C30527B8B2CC002C2AE4 /* EasyQuestionView.swift */; };
 		B3D5C30827BC7E50002C2AE4 /* MediumTypesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D5C30727BC7E50002C2AE4 /* MediumTypesView.swift */; };
+		B3E232C02818C2850006F37B /* TestNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E232BF2818C2850006F37B /* TestNavigationLink.swift */; };
+		B3E232C22818DE2C0006F37B /* NoRegionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E232C12818DE2C0006F37B /* NoRegionButton.swift */; };
 		B3E7352B279D196D0099127F /* PokeQuizApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7352A279D196D0099127F /* PokeQuizApp.swift */; };
 		B3E7352D279D196D0099127F /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E7352C279D196D0099127F /* MainMenu.swift */; };
 		B3E7352F279D196F0099127F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3E7352E279D196F0099127F /* Assets.xcassets */; };
@@ -49,11 +53,18 @@
 		B3EAC0CC280230CD003C6001 /* SmallSillouetteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EAC0CB280230CD003C6001 /* SmallSillouetteView.swift */; };
 		B3EAC0CF280522A2003C6001 /* VeryEasyGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EAC0CE280522A2003C6001 /* VeryEasyGameView.swift */; };
 		B3EAC0D1280522AD003C6001 /* VeryEasyQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EAC0D0280522AD003C6001 /* VeryEasyQuestionView.swift */; };
-		B3FA3ABA27B4A18200E0A833 /* EasyScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA3AB927B4A18200E0A833 /* EasyScoreView.swift */; };
+		B3EAC0D5280B42F1003C6001 /* Onboarding_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EAC0D4280B42F1003C6001 /* Onboarding_1.swift */; };
+		B3EAC0D7280B752C003C6001 /* Onboarding_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EAC0D6280B752C003C6001 /* Onboarding_2.swift */; };
+		B3EAC0D9280B7AFF003C6001 /* Onboarding_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EAC0D8280B7AFF003C6001 /* Onboarding_3.swift */; };
+		B3EAC0DB280BA9CA003C6001 /* Onboarding_4.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EAC0DA280BA9CA003C6001 /* Onboarding_4.swift */; };
+		B3EAC0DD280BAE26003C6001 /* Onboarding_5.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3EAC0DC280BAE25003C6001 /* Onboarding_5.swift */; };
+		B3FA3ABA27B4A18200E0A833 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA3AB927B4A18200E0A833 /* ScoreView.swift */; };
 		B3FA3ABC27B4A1A000E0A833 /* EasyScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3FA3ABB27B4A1A000E0A833 /* EasyScoreViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B32BF250280DADDF00AE38BA /* PokemonLevelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonLevelView.swift; sourceTree = "<group>"; };
+		B3781AEC2810329F00B4ADA1 /* LevelNavigationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelNavigationButtonView.swift; sourceTree = "<group>"; };
 		B388AE7027D8E27C00E523FE /* HardGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardGameView.swift; sourceTree = "<group>"; };
 		B388AE7227D8E29100E523FE /* HardQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardQuestionView.swift; sourceTree = "<group>"; };
 		B388AE7427D8E31300E523FE /* HardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HardViewModel.swift; sourceTree = "<group>"; };
@@ -83,6 +94,8 @@
 		B3D5C30327B8AFEF002C2AE4 /* SillouhetteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SillouhetteView.swift; sourceTree = "<group>"; };
 		B3D5C30527B8B2CC002C2AE4 /* EasyQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyQuestionView.swift; sourceTree = "<group>"; };
 		B3D5C30727BC7E50002C2AE4 /* MediumTypesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediumTypesView.swift; sourceTree = "<group>"; };
+		B3E232BF2818C2850006F37B /* TestNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestNavigationLink.swift; sourceTree = "<group>"; };
+		B3E232C12818DE2C0006F37B /* NoRegionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoRegionButton.swift; sourceTree = "<group>"; };
 		B3E73527279D196D0099127F /* PokeQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3E7352A279D196D0099127F /* PokeQuizApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeQuizApp.swift; sourceTree = "<group>"; };
 		B3E7352C279D196D0099127F /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
@@ -97,7 +110,12 @@
 		B3EAC0CB280230CD003C6001 /* SmallSillouetteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallSillouetteView.swift; sourceTree = "<group>"; };
 		B3EAC0CE280522A2003C6001 /* VeryEasyGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VeryEasyGameView.swift; path = "Level 1/VeryEasyGameView.swift"; sourceTree = "<group>"; };
 		B3EAC0D0280522AD003C6001 /* VeryEasyQuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VeryEasyQuestionView.swift; path = "Level 1/VeryEasyQuestionView.swift"; sourceTree = "<group>"; };
-		B3FA3AB927B4A18200E0A833 /* EasyScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyScoreView.swift; sourceTree = "<group>"; };
+		B3EAC0D4280B42F1003C6001 /* Onboarding_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding_1.swift; sourceTree = "<group>"; };
+		B3EAC0D6280B752C003C6001 /* Onboarding_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding_2.swift; sourceTree = "<group>"; };
+		B3EAC0D8280B7AFF003C6001 /* Onboarding_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding_3.swift; sourceTree = "<group>"; };
+		B3EAC0DA280BA9CA003C6001 /* Onboarding_4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding_4.swift; sourceTree = "<group>"; };
+		B3EAC0DC280BAE25003C6001 /* Onboarding_5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding_5.swift; sourceTree = "<group>"; };
+		B3FA3AB927B4A18200E0A833 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		B3FA3ABB27B4A1A000E0A833 /* EasyScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EasyScoreViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,10 +139,13 @@
 				B3D5C30327B8AFEF002C2AE4 /* SillouhetteView.swift */,
 				B3EAC0CB280230CD003C6001 /* SmallSillouetteView.swift */,
 				B396925B27AE1AF000DAC5AE /* PokemonImageView.swift */,
+				B32BF250280DADDF00AE38BA /* PokemonLevelView.swift */,
 				B396925D27AE1CD800DAC5AE /* BackgroundView.swift */,
+				B3781AEC2810329F00B4ADA1 /* LevelNavigationButtonView.swift */,
 				B396926127AF383B00DAC5AE /* ButtonView.swift */,
 				B396926A27B1FBDC00DAC5AE /* BottomTextView.swift */,
 				B3D5C2F927B73C6A002C2AE4 /* Test.swift */,
+				B3E232C12818DE2C0006F37B /* NoRegionButton.swift */,
 			);
 			path = "Sub Views";
 			sourceTree = "<group>";
@@ -143,7 +164,6 @@
 			children = (
 				B3D5C30127B8AF68002C2AE4 /* EasyGameView.swift */,
 				B3D5C30527B8B2CC002C2AE4 /* EasyQuestionView.swift */,
-				B3FA3AB927B4A18200E0A833 /* EasyScoreView.swift */,
 			);
 			path = "Level 2";
 			sourceTree = "<group>";
@@ -179,14 +199,21 @@
 			isa = PBXGroup;
 			children = (
 				B3EAC0C727F9376E003C6001 /* RegionToggleDataTest.swift */,
-				B3B08EFC27EB493300D2B4EB /* SettingsView.swift */,
 				B3EAC0C927FBCC07003C6001 /* OnboardingView.swift */,
 				B396925527ACD21900DAC5AE /* WelcomeScreen.swift */,
+				B3EAC0D4280B42F1003C6001 /* Onboarding_1.swift */,
+				B3EAC0D6280B752C003C6001 /* Onboarding_2.swift */,
+				B3EAC0D8280B7AFF003C6001 /* Onboarding_3.swift */,
+				B3EAC0DA280BA9CA003C6001 /* Onboarding_4.swift */,
+				B3EAC0DC280BAE25003C6001 /* Onboarding_5.swift */,
+				B3B08EFC27EB493300D2B4EB /* SettingsView.swift */,
 				B3E7352C279D196D0099127F /* MainMenu.swift */,
 				B3B7917127EFC41D00D237B4 /* ContentView.swift */,
+				B3E232BF2818C2850006F37B /* TestNavigationLink.swift */,
+				B3FA3AB927B4A18200E0A833 /* ScoreView.swift */,
 				B388AEB027E15AB700E523FE /* Utilities */,
-				B338C24F27CD39EA00C3BBF6 /* Level 2 */,
 				B338C24E27CD39E100C3BBF6 /* Level 1 */,
+				B338C24F27CD39EA00C3BBF6 /* Level 2 */,
 				B338C25027CD3A1300C3BBF6 /* Level 3 */,
 				B388AE6F27D8E24900E523FE /* Level 4 */,
 				B3B08EEF27E6CE3200D2B4EB /* Level 5 */,
@@ -342,18 +369,22 @@
 				B3E7352D279D196D0099127F /* MainMenu.swift in Sources */,
 				B396926227AF383B00DAC5AE /* ButtonView.swift in Sources */,
 				B388AEB227E15AEC00E523FE /* TypesUtility.swift in Sources */,
+				B3E232C22818DE2C0006F37B /* NoRegionButton.swift in Sources */,
 				B396925E27AE1CD800DAC5AE /* BackgroundView.swift in Sources */,
 				B3D5C2FA27B73C6A002C2AE4 /* Test.swift in Sources */,
 				B3B08EFF27EC146500D2B4EB /* SettingsViewModel.swift in Sources */,
 				B388AE7927D9913300E523FE /* TypeCalcMockDataModel.swift in Sources */,
+				B3EAC0DB280BA9CA003C6001 /* Onboarding_4.swift in Sources */,
 				B3EAC0CF280522A2003C6001 /* VeryEasyGameView.swift in Sources */,
 				B396926427AF458300DAC5AE /* EasyGameViewModel.swift in Sources */,
+				B3EAC0D5280B42F1003C6001 /* Onboarding_1.swift in Sources */,
 				B3E9798F27BDE97F0068A833 /* MediumQuestionView.swift in Sources */,
 				B388AEAF27E0340600E523FE /* HardTypesView.swift in Sources */,
 				B3B08EF127E6CE7C00D2B4EB /* VeryHardQuestionView.swift in Sources */,
 				B388AE7127D8E27C00E523FE /* HardGameView.swift in Sources */,
 				B396925627ACD21900DAC5AE /* WelcomeScreen.swift in Sources */,
 				B3B08EF527E6D04800D2B4EB /* VeryHardGame.swift in Sources */,
+				B3E232C02818C2850006F37B /* TestNavigationLink.swift in Sources */,
 				B3D5C30627B8B2CC002C2AE4 /* EasyQuestionView.swift in Sources */,
 				B396926027AF071000DAC5AE /* EasyGame.swift in Sources */,
 				B3E9799527BF4BBA0068A833 /* MediumGameView.swift in Sources */,
@@ -364,18 +395,23 @@
 				B3FA3ABC27B4A1A000E0A833 /* EasyScoreViewModel.swift in Sources */,
 				B3EAC0CA27FBCC07003C6001 /* OnboardingView.swift in Sources */,
 				B3B08EFB27EB474500D2B4EB /* Test1.swift in Sources */,
+				B32BF251280DADDF00AE38BA /* PokemonLevelView.swift in Sources */,
 				B3EAC0C827F9376E003C6001 /* RegionToggleDataTest.swift in Sources */,
+				B3EAC0D7280B752C003C6001 /* Onboarding_2.swift in Sources */,
 				B3D5C30827BC7E50002C2AE4 /* MediumTypesView.swift in Sources */,
 				B388AE7327D8E29100E523FE /* HardQuestionView.swift in Sources */,
 				B3D5C30427B8AFEF002C2AE4 /* SillouhetteView.swift in Sources */,
 				B3E9799127BDED740068A833 /* MediumGame.swift in Sources */,
-				B3FA3ABA27B4A18200E0A833 /* EasyScoreView.swift in Sources */,
+				B3EAC0DD280BAE26003C6001 /* Onboarding_5.swift in Sources */,
+				B3FA3ABA27B4A18200E0A833 /* ScoreView.swift in Sources */,
 				B396925C27AE1AF000DAC5AE /* PokemonImageView.swift in Sources */,
 				B396925A27AE199D00DAC5AE /* PokemonData.swift in Sources */,
+				B3781AED2810329F00B4ADA1 /* LevelNavigationButtonView.swift in Sources */,
 				B3D5C30227B8AF68002C2AE4 /* EasyGameView.swift in Sources */,
 				B3EAC0D1280522AD003C6001 /* VeryEasyQuestionView.swift in Sources */,
 				B3EAC0CC280230CD003C6001 /* SmallSillouetteView.swift in Sources */,
 				B3B08EF327E6CE9D00D2B4EB /* VeryHardGameView.swift in Sources */,
+				B3EAC0D9280B7AFF003C6001 /* Onboarding_3.swift in Sources */,
 				B388AE7727D8E43300E523FE /* HardGame.swift in Sources */,
 				B3E9798D27BDE9530068A833 /* MediumGameViewModel.swift in Sources */,
 				B3B08EFD27EB493300D2B4EB /* SettingsView.swift in Sources */,

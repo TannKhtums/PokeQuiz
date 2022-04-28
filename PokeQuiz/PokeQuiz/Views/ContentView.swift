@@ -20,20 +20,31 @@ extension UserDefaults {
 }
 
 struct ContentView: View {
+    @EnvironmentObject var viewModel: SettingsViewModel
+
     var body: some View {
-//        if UserDefaults.standard.welcomeScreenShown {
-//            WelcomeScreen()
-//        } else {
-//            WelcomeScreen()
-//        }
-        WelcomeScreen()
+        NavigationView {
+            TabView {
+                MainMenu()
+//                    .navigationBarHidden(true)
+                    .tabItem {
+                        Label("Game", systemImage: "gamecontroller.fill")
+                    }.navigationBarHidden(true)
+                
+                SettingsView()
+//                    .navigationBarHidden(true)
+                    .tabItem {
+                        Label("Settings", systemImage: "gear")
+                        }
+                    }.navigationBarHidden(true).navigationBarTitle("")
+        }
+        .navigationBarHidden(true)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(SettingsViewModel())
     }
 }
-
 

@@ -25,6 +25,7 @@ struct EasyQuestionView: View {
     var body: some View {
         ZStack{
             BackgroundView()
+            ScrollView {
             VStack {
                 Spacer()
                 Spacer()
@@ -86,7 +87,7 @@ struct EasyQuestionView: View {
                 }
                 Spacer()
                 Spacer()
-                Spacer()
+            }
             }
         }
     }

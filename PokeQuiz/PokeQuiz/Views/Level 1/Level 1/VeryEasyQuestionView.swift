@@ -25,65 +25,67 @@ struct VeryEasyQuestionView: View {
     var body: some View {
         ZStack{
             BackgroundView()
-            VStack {
-                Spacer()
-                Spacer()
-                Text("Who's that Pokemon?")
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
-                    .bold()
-                Spacer()
-                PokemonImageViewEasy(selection: viewModel.pokemon[0].number)
-                Spacer()
+            ScrollView {
                 VStack {
-                    HStack {
-                        ForEach(0..<2) { index in
-                            Button {
-                                print("\(viewModel.pokemonShuffled[index].name)")
-                                print(viewModel.pokemon)
-                                print(viewModel.pokemonShuffled)
-                                print(viewModel.easyGame.guesses)
-                                viewModel.makeGuess(name: viewModel.pokemonShuffled[index].name)
-                                viewModel.selectedGuess = viewModel.pokemonShuffled[index].name
-                            } label: {
-                                ButtonView(chosenText: viewModel.pokemonShuffled[index].name + " " + viewModel.rightWrongText(optionalName: viewModel.pokemonShuffled[index].name))
+                    Spacer()
+                    Spacer()
+                    Text("Who's that Pokemon?")
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                        .bold()
+                    Spacer()
+                    PokemonImageViewEasy(selection: viewModel.pokemon[0].number)
+                    Spacer()
+                    VStack {
+                        HStack {
+                            ForEach(0..<2) { index in
+                                Button {
+                                    print("\(viewModel.pokemonShuffled[index].name)")
+                                    print(viewModel.pokemon)
+                                    print(viewModel.pokemonShuffled)
+                                    print(viewModel.easyGame.guesses)
+                                    viewModel.makeGuess(name: viewModel.pokemonShuffled[index].name)
+                                    viewModel.selectedGuess = viewModel.pokemonShuffled[index].name
+                                } label: {
+                                    ButtonView(chosenText: viewModel.pokemonShuffled[index].name + " " + viewModel.rightWrongText(optionalName: viewModel.pokemonShuffled[index].name))
+                                }
+                                .background(viewModel.color(optionalName: viewModel.pokemonShuffled[index].name))
+                                .disabled(viewModel.guessWasMade)
+                          }
+                        }
+                        HStack {
+                            ForEach(2..<4) { index in
+                                Button {
+                                    print("\(viewModel.pokemonShuffled[index].name)")
+                                    print(viewModel.pokemon)
+                                    print(viewModel.pokemonShuffled)
+                                    print(viewModel.easyGame.guesses)
+                                    viewModel.makeGuess(name: viewModel.pokemonShuffled[index].name)
+                                    viewModel.selectedGuess = viewModel.pokemonShuffled[index].name
+                                } label: {
+                                    ButtonView(chosenText: viewModel.pokemonShuffled[index].name + " " + viewModel.rightWrongText(optionalName: viewModel.pokemonShuffled[index].name))
                             }
-                            .background(viewModel.color(optionalName: viewModel.pokemonShuffled[index].name))
-                            .disabled(viewModel.guessWasMade)
-                      }
-                    }
-                    HStack {
-                        ForEach(2..<4) { index in
-                            Button {
-                                print("\(viewModel.pokemonShuffled[index].name)")
+                                .background(viewModel.color(optionalName: viewModel.pokemonShuffled[index].name))
+                                .disabled(viewModel.guessWasMade)
+                          }
+                        }
+                        Text(viewModel.correctAnswerNotification(optionalName: viewModel.selectedGuess))
+                            .padding()
+                        
+                        if viewModel.guessWasMade {
+                            Button(action: { viewModel.displayNextScreen()
+                                viewModel.shufflePokemonAgain()
                                 print(viewModel.pokemon)
                                 print(viewModel.pokemonShuffled)
-                                print(viewModel.easyGame.guesses)
-                                viewModel.makeGuess(name: viewModel.pokemonShuffled[index].name)
-                                viewModel.selectedGuess = viewModel.pokemonShuffled[index].name
-                            } label: {
-                                ButtonView(chosenText: viewModel.pokemonShuffled[index].name + " " + viewModel.rightWrongText(optionalName: viewModel.pokemonShuffled[index].name))
-                        }
-                            .background(viewModel.color(optionalName: viewModel.pokemonShuffled[index].name))
-                            .disabled(viewModel.guessWasMade)
-                      }
-                    }
-                    Text(viewModel.correctAnswerNotification(optionalName: viewModel.selectedGuess))
-                        .padding()
-                    
-                    if viewModel.guessWasMade {
-                        Button(action: { viewModel.displayNextScreen()
-                            viewModel.shufflePokemonAgain()
-                            print(viewModel.pokemon)
-                            print(viewModel.pokemonShuffled)
-                        }) {
-                            BottomTextView(str: "Next")
+                            }) {
+                                BottomTextView(str: "Next")
+                            }
                         }
                     }
+                    Spacer()
+                    Spacer()
+                    Spacer()
                 }
-                Spacer()
-                Spacer()
-                Spacer()
             }
         }
     }

@@ -45,15 +45,19 @@ struct PokemonImageView: View {
     var selection: String
     
     var body: some View {
-        Image(selection)
-                .resizable()
-                .frame(width: 175, height: 175)
-                .padding()
-                .background(.regularMaterial)
-                .shadow(radius: 5)
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-    }
+                Image(selection)
+                        .resizable()
+                        .scaledToFit()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 200, height: 200)
+//                        .frame(width: geo.size.width * 0.7, height: geo.size.width * 0.7)
+                        .padding()
+                        .background(.regularMaterial)
+                        .shadow(radius: 5)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+        }
 }
+
 
 struct PokemonImageViewEasy: View {
     var selection: String
@@ -87,12 +91,36 @@ struct PokemonImageView_Previews: PreviewProvider {
     static var previews: some View {
         ScrollView {
             VStack {
-                LunatoneImageView()
-                SolRockImageView()
+//                LunatoneImageView()
+//                SolRockImageView()
                 PokemonImageView(selection: "001")
                 PokemonImageViewEasy(selection: "001")
                 PokemonImageViewMedium(selection: "001")
             }
         }
+.previewInterfaceOrientation(.portraitUpsideDown)
     }
 }
+
+//struct PokemonImageView: View {
+//    var selection: String
+//
+//    var body: some View {
+//        VStack {
+//            GeometryReader { geo in
+//                    Image(selection)
+//                            .resizable()
+//    //                        .scaledToFit()
+//    //                        .aspectRatio(contentMode: .fit)
+//    //                        .frame(width: geo.size.width * 0.7)
+//                            .frame(width: geo.size.width * 0.7, height: geo.size.width * 0.7)
+//                            .padding()
+//                            .background(.regularMaterial)
+//                            .shadow(radius: 5)
+//                            .clipShape(RoundedRectangle(cornerRadius: 20))
+//    //                        .position(x: geo.size.width / 2, y: geo.size.height / 2)
+//                    .frame(width: geo.size.width, height: geo.size.height)
+//            }
+//        }
+//    }
+//}

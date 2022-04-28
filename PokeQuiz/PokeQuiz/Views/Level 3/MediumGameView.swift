@@ -18,14 +18,15 @@ struct MediumGameView: View {
                     .font(.callout).bold()
                     .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
-                    .padding()
-                MediumQuestionView()
+//                    .padding()
+                    MediumQuestionView()
+    //            .navigationBarHidden(true)
+                .environmentObject(viewModel)
+
             }
-//            .navigationBarHidden(true)
-            .environmentObject(viewModel)
         }
         .background(
-            NavigationLink(destination: EasyScoreView(viewModel: EasyScoreViewModel(correctGuesses: viewModel.correctGuesses, incorrectGuesses: viewModel.incorrectGuesses)),
+            NavigationLink(destination: ScoreView(viewModel: EasyScoreViewModel(correctGuesses: viewModel.correctGuesses, incorrectGuesses: viewModel.incorrectGuesses)),
                            isActive: .constant(viewModel.gameIsOver),
                            //isActive takes a binding boolean and whenever you set that binding boolean to true, the navigation link gets activated and you are navigated to the destination.
                            label: { EmptyView() })

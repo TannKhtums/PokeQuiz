@@ -19,28 +19,6 @@ struct SettingsView: View {
         NavigationView {
             Form {
                 Section {
-                    VStack {
-                        Text("Color Scheme")
-                        Picker("Level Style", selection: $viewModel.selectedStyle) {
-                            ForEach(SettingsViewModel.LevelStyle.allCases) { style in
-                                Text(style.rawValue.capitalized)
-                            }
-                        }
-                        .pickerStyle(.segmented)
-                        .padding([.leading, .trailing])
-                    }
-                }
-                Picker("Favorite Pokemon", selection: $viewModel.selectedPokemon) {
-                    ForEach(viewModel.pokemonArr, id: \.self) {
-                            Text($0.name)
-                        }
-                    }
-                HStack {
-                    Spacer()
-                    PokemonImageView(selection: viewModel.selectedPokemon.number)
-                    Spacer()
-                }
-                Section {
                         HStack {
                             Spacer()
 
@@ -66,12 +44,50 @@ struct SettingsView: View {
                         }.padding()
 
                 }
+            
+                Section {
+                    VStack {
+                        Text("Color Theme")
+                        Picker("Level Style", selection: $viewModel.selectedStyle) {
+                            ForEach(SettingsViewModel.LevelStyle.allCases) { style in
+                                Text(style.rawValue.capitalized)
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                        .padding([.leading, .trailing])
+                        
+                        if viewModel.selectedStyle == .green {
+                            PokemonImageView(selection: "green_egg")
+                                .padding()
+                        } else if viewModel.selectedStyle == .red {
+                            PokemonImageView(selection: "red_egg")
+                                .padding()
+                        } else if viewModel.selectedStyle == .blue {
+                            PokemonImageView(selection: "blue_egg")
+                                .padding()
+                        } else if viewModel.selectedStyle == .yellow {
+                            PokemonImageView(selection: "yellow_egg")
+                                .padding()
+                        }
+                    }
+                }
+                Picker("Favorite Pokemon", selection: $viewModel.selectedPokemon) {
+                    ForEach(viewModel.pokemonArr, id: \.self) {
+                            Text($0.name)
+                        }
+                    }
+                HStack {
+                    Spacer()
+                    PokemonImageView(selection: viewModel.selectedPokemon.number)
+                    Spacer()
+                }
+                
                 Section {
                    VStack {
                        Text("Regions")
                         HStack {
                             Spacer()
-                            Toggle("Kanto", isOn: $viewModel.kanto)
+                            Toggle("Kanto (Gen 1)", isOn: $viewModel.kanto)
                                 .onChange(of: viewModel.kanto) { value in
                                     viewModel.unselectOrAddRegion(type: "Kanto")
                                     print(viewModel.selectedRegionArr)
@@ -83,7 +99,7 @@ struct SettingsView: View {
                         }.padding()
                         HStack {
                             Spacer()
-                            Toggle("Johto", isOn: $viewModel.johto)
+                            Toggle("Johto (Gen 2)", isOn: $viewModel.johto)
                                 .onChange(of: viewModel.johto) { value in
                                     viewModel.unselectOrAddRegion(type: "Johto")
                                     print(value)
@@ -96,7 +112,7 @@ struct SettingsView: View {
                         }.padding()
                         HStack {
                             Spacer()
-                            Toggle("Hoenn", isOn: $viewModel.hoenn)
+                            Toggle("Hoenn (Gen 3)", isOn: $viewModel.hoenn)
                                 .onChange(of: viewModel.hoenn) { value in
                                     viewModel.unselectOrAddRegion(type: "Hoenn")
                                     print(value)
@@ -109,7 +125,7 @@ struct SettingsView: View {
                         }.padding()
                         HStack {
                             Spacer()
-                            Toggle("Sinnoh", isOn: $viewModel.sinnoh)
+                            Toggle("Sinnoh(Gen 4)", isOn: $viewModel.sinnoh)
                                 .onChange(of: viewModel.sinnoh) { value in
                                     viewModel.unselectOrAddRegion(type: "Sinnoh")
                                     print(value)
@@ -122,7 +138,7 @@ struct SettingsView: View {
                         }.padding()
                         HStack {
                             Spacer()
-                            Toggle("Unova", isOn: $viewModel.unova)
+                            Toggle("Unova(Gen 5)", isOn: $viewModel.unova)
                                 .onChange(of: viewModel.unova) { value in
                                     viewModel.unselectOrAddRegion(type: "Unova")
                                     print(value)
@@ -135,7 +151,7 @@ struct SettingsView: View {
                         }.padding()
                         HStack {
                             Spacer()
-                            Toggle("Kalos", isOn: $viewModel.kalos)
+                            Toggle("Kalos (Gen 6)", isOn: $viewModel.kalos)
                                 .onChange(of: viewModel.kalos) { value in
                                     viewModel.unselectOrAddRegion(type: "Kalos")
                                     print(value)
@@ -148,7 +164,7 @@ struct SettingsView: View {
                         }.padding()
                         HStack {
                             Spacer()
-                            Toggle("Alola", isOn: $viewModel.alola)
+                            Toggle("Alola (Gen 7)", isOn: $viewModel.alola)
                                 .onChange(of: viewModel.alola) { value in
                                     viewModel.unselectOrAddRegion(type: "Alola")
                                     print(value)
@@ -159,16 +175,40 @@ struct SettingsView: View {
                                 }
                             Spacer()
                         }.padding()
+                       HStack {
+                           Spacer()
+                           Toggle("Galar (Gen 8)", isOn: $viewModel.galar)
+                               .onChange(of: viewModel.galar) { value in
+                                   viewModel.unselectOrAddRegion(type: "Galar")
+                                   print(value)
+                                   print(viewModel.selectedRegionArr)
+                                   print(viewModel.selectedPokemonArr)
+                                   viewModel.createPokemonArrRegionSelection(chosenArr: viewModel.selectedRegionArr, pokemonArr: viewModel.pokemonArr)
+                                   print(viewModel.selectedPokemonArr)
+                               }
+                           Spacer()
+                       }.padding()
+                       HStack {
+                           Spacer()
+                           Toggle("Hisui (Gen 8)", isOn: $viewModel.hisui)
+                               .onChange(of: viewModel.hisui) { value in
+                                   viewModel.unselectOrAddRegion(type: "Hisui")
+                                   print(value)
+                                   print(viewModel.selectedRegionArr)
+                                   print(viewModel.selectedPokemonArr)
+                                   viewModel.createPokemonArrRegionSelection(chosenArr: viewModel.selectedRegionArr, pokemonArr: viewModel.pokemonArr)
+                                   print(viewModel.selectedPokemonArr)
+                               }
+                           Spacer()
+                       }.padding()
                     }
                 }
             }.navigationBarTitle("Settings")
-                .toolbar {
-                    Button("Done") {
-                        dismiss()
-                    }
-                }
-        }.preferredColorScheme(isDarkMode ? .dark : .light)
-
+//                .navigationBarHidden(true)
+        }
+        .environmentObject(viewModel)
+        .preferredColorScheme(isDarkMode ? .dark : .light)
+        .navigationBarHidden(true).navigationBarTitle("")
     }
 }
 

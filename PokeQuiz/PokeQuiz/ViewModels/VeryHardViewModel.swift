@@ -107,15 +107,15 @@ class VeryHardViewModel: ObservableObject {
         }
     }
 
-
     func correctAnswerNotification() -> String {
         if let guessedTypes = hardGame.guesses[currentQuestion] {
             // so guessedName is whatever the value is for the Key >easyGame.guesses[currentQuestion]
-            if guessedTypes == currentQuestion.weaknesses.sorted() {
+            if guessedTypes == currentQuestion.resistance.sorted() {
                 if currentQuestion.superResistance.count > 0 {
                     return """
                         "Correct!
-                        *Super resistance: \(currentQuestion.superResistance.joined(separator: ", "))
+                         Fun Fact: \(currentQuestion.name) is super resistant to these types:
+                        \(currentQuestion.superResistance.joined(separator: ", "))
                         """
                 } else {
                     return ""
