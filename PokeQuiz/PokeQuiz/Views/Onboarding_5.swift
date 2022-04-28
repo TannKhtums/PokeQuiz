@@ -9,7 +9,9 @@ import SwiftUI
 
 struct Onboarding_5: View {
     
-    @State var noRegionsSelected = false
+    @State var regionSelected = false
+    @State var noRegionSelectedAlert = false
+
 
     @AppStorage("shouldShowOnboarding") var shouldShowOnboarding: Bool = true
     @EnvironmentObject var viewModel: SettingsViewModel
@@ -30,10 +32,8 @@ struct Onboarding_5: View {
                                            Toggle("Kanto (Gen 1)", isOn: $viewModel.kanto)
                                                .onChange(of: viewModel.kanto) { value in
                                                    viewModel.unselectOrAddRegion(type: "Kanto")
-                                                   print(viewModel.selectedRegionArr)
-                                                   print(viewModel.selectedPokemonArr)
-                                                   viewModel.createPokemonArrRegionSelection(chosenArr: viewModel.selectedRegionArr, pokemonArr: viewModel.pokemonArr)
-                                                   print(viewModel.selectedPokemonArr)
+                                                   regionSelected.toggle()
+                                                   print("Kanto", value)
                                                }
                                            Spacer()
                                        }.padding()
@@ -42,11 +42,8 @@ struct Onboarding_5: View {
                                            Toggle("Johto (Gen 2)", isOn: $viewModel.johto)
                                                .onChange(of: viewModel.johto) { value in
                                                    viewModel.unselectOrAddRegion(type: "Johto")
-                                                   print(value)
-                                                   print(viewModel.selectedRegionArr)
-                                                   print(viewModel.selectedPokemonArr)
-                                                   viewModel.createPokemonArrRegionSelection(chosenArr: viewModel.selectedRegionArr, pokemonArr: viewModel.pokemonArr)
-                                                   print(viewModel.selectedPokemonArr)
+                                                   regionSelected.toggle()
+                                                   print("Johto", value)
                                                }
                                            Spacer()
                                        }.padding()
@@ -55,11 +52,8 @@ struct Onboarding_5: View {
                                            Toggle("Hoenn (Gen 3)", isOn: $viewModel.hoenn)
                                                .onChange(of: viewModel.hoenn) { value in
                                                    viewModel.unselectOrAddRegion(type: "Hoenn")
-                                                   print(value)
-                                                   print(viewModel.selectedRegionArr)
-                                                   print(viewModel.selectedPokemonArr)
-                                                   viewModel.createPokemonArrRegionSelection(chosenArr: viewModel.selectedRegionArr, pokemonArr: viewModel.pokemonArr)
-                                                   print(viewModel.selectedPokemonArr)
+                                                   regionSelected.toggle()
+                                                   print("Hoenn", value)
                                                }
                                            Spacer()
                                        }.padding()
@@ -68,11 +62,8 @@ struct Onboarding_5: View {
                                            Toggle("Sinnoh (Gen 4)", isOn: $viewModel.sinnoh)
                                                .onChange(of: viewModel.sinnoh) { value in
                                                    viewModel.unselectOrAddRegion(type: "Sinnoh")
-                                                   print(value)
-                                                   print(viewModel.selectedRegionArr)
-                                                   print(viewModel.selectedPokemonArr)
-                                                   viewModel.createPokemonArrRegionSelection(chosenArr: viewModel.selectedRegionArr, pokemonArr: viewModel.pokemonArr)
-                                                   print(viewModel.selectedPokemonArr)
+                                                   regionSelected.toggle()
+                                                   print("Sinnoh", value)
                                                }
                                            Spacer()
                                        }.padding()
@@ -81,11 +72,8 @@ struct Onboarding_5: View {
                                            Toggle("Unova (Gen 5)", isOn: $viewModel.unova)
                                                .onChange(of: viewModel.unova) { value in
                                                    viewModel.unselectOrAddRegion(type: "Unova")
-                                                   print(value)
-                                                   print(viewModel.selectedRegionArr)
-                                                   print(viewModel.selectedPokemonArr)
-                                                   viewModel.createPokemonArrRegionSelection(chosenArr: viewModel.selectedRegionArr, pokemonArr: viewModel.pokemonArr)
-                                                   print(viewModel.selectedPokemonArr)
+                                                   regionSelected.toggle()
+                                                   print("Unova", value)
                                                }
                                            Spacer()
                                        }.padding()
@@ -94,11 +82,8 @@ struct Onboarding_5: View {
                                            Toggle("Kalos (Gen 6)", isOn: $viewModel.kalos)
                                                .onChange(of: viewModel.kalos) { value in
                                                    viewModel.unselectOrAddRegion(type: "Kalos")
-                                                   print(value)
-                                                   print(viewModel.selectedRegionArr)
-                                                   print(viewModel.selectedPokemonArr)
-                                                   viewModel.createPokemonArrRegionSelection(chosenArr: viewModel.selectedRegionArr, pokemonArr: viewModel.pokemonArr)
-                                                   print(viewModel.selectedPokemonArr)
+                                                   regionSelected.toggle()
+                                                   print("Kalos", value)
                                                }
                                            Spacer()
                                        }.padding()
@@ -107,11 +92,8 @@ struct Onboarding_5: View {
                                            Toggle("Alola (Gen 7)", isOn: $viewModel.alola)
                                                .onChange(of: viewModel.alola) { value in
                                                    viewModel.unselectOrAddRegion(type: "Alola")
-                                                   print(value)
-                                                   print(viewModel.selectedRegionArr)
-                                                   print(viewModel.selectedPokemonArr)
-                                                   viewModel.createPokemonArrRegionSelection(chosenArr: viewModel.selectedRegionArr, pokemonArr: viewModel.pokemonArr)
-                                                   print(viewModel.selectedPokemonArr)
+                                                   regionSelected.toggle()
+                                                   print("Alola", value)
                                                }
                                            Spacer()
                                        }.padding()
@@ -120,11 +102,8 @@ struct Onboarding_5: View {
                                           Toggle("Galar (Gen 8)", isOn: $viewModel.galar)
                                               .onChange(of: viewModel.galar) { value in
                                                   viewModel.unselectOrAddRegion(type: "Galar")
-                                                  print(value)
-                                                  print(viewModel.selectedRegionArr)
-                                                  print(viewModel.selectedPokemonArr)
-                                                  viewModel.createPokemonArrRegionSelection(chosenArr: viewModel.selectedRegionArr, pokemonArr: viewModel.pokemonArr)
-                                                  print(viewModel.selectedPokemonArr)
+                                                  regionSelected.toggle()
+                                                  print("Galar", value)
                                               }
                                           Spacer()
                                       }.padding()
@@ -133,21 +112,20 @@ struct Onboarding_5: View {
                                           Toggle("Hisui (Gen 8)", isOn: $viewModel.hisui)
                                               .onChange(of: viewModel.hisui) { value in
                                                   viewModel.unselectOrAddRegion(type: "Hisui")
-                                                  print(value)
-                                                  print(viewModel.selectedRegionArr)
-                                                  print(viewModel.selectedPokemonArr)
-                                                  viewModel.createPokemonArrRegionSelection(chosenArr: viewModel.selectedRegionArr, pokemonArr: viewModel.pokemonArr)
-                                                  print(viewModel.selectedPokemonArr)
+                                                  regionSelected.toggle()
+                                                  print("Hisui", value)
                                               }
                                           Spacer()
                                       }.padding()
                                    }
                                     
                                    Button(action: {
-                                       if viewModel.selectedPokemonArr.count < 1 {
-                                           noRegionsSelected = true
+                                       if regionSelected == false {
+                                           noRegionSelectedAlert = true
                                        } else {
                                            shouldShowOnboarding.toggle()
+                                           viewModel.createPokemonArrRegionSelection(chosenArr: viewModel.selectedRegionArr, pokemonArr: viewModel.pokemonArr)
+                                           print(viewModel.selectedPokemonArr)
                                        }
                                    }, label: {
                                        Text("Done")
@@ -168,7 +146,7 @@ struct Onboarding_5: View {
             }
         }
 
-        .alert("You can't take a quiz with no questions. Please select at least one region.", isPresented: $noRegionsSelected)
+        .alert("You can't take a quiz with no questions. Please select at least one region.", isPresented: $noRegionSelectedAlert)
        { Button("Okee dokee!", action: dismissAlert)}
         
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -176,7 +154,7 @@ struct Onboarding_5: View {
     }
     
     func dismissAlert() {
-        noRegionsSelected = false
+        noRegionSelectedAlert = false
     }
 
 }
