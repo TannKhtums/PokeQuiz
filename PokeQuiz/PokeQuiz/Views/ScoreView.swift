@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EasyScoreView: View {
+struct ScoreView: View {
     let viewModel: EasyScoreViewModel
     
     
@@ -15,6 +15,7 @@ struct EasyScoreView: View {
         ZStack {
             BackgroundView()
             VStack {
+                Spacer()
                 VStack {
                     VStack {
                         Text("Final Score:")
@@ -23,9 +24,9 @@ struct EasyScoreView: View {
                             .bold()
                     }
                     .font(.largeTitle)
-                    .foregroundColor(.white)
-                    .position(x: 100, y: 100)
-                    .frame(width: 200, height: 200)
+//                    .foregroundColor(.black)
+//                    .position(x: 100, y: 100)
+//                    .frame(width: 200, height: 200)
                     VStack {
                         Text("Correct ✅: \(viewModel.correctGuesses)")
                         Text("Incorrect ❌: \(viewModel.incorrectGuesses)")
@@ -33,6 +34,9 @@ struct EasyScoreView: View {
                     .font(.title)
                     .padding()
                 }
+                .padding()
+                .background(.regularMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
 
                 NavigationLink(destination: MainMenu()) {
                         ButtonView(chosenText: "Return to Main Menu")
@@ -40,6 +44,7 @@ struct EasyScoreView: View {
                 .foregroundColor(.black)
                 .border(.blue, width: 4)
                 .padding()
+                
                 Spacer()
                 Spacer()
             }
@@ -48,8 +53,8 @@ struct EasyScoreView: View {
     }
 }
 
-struct EasyScoreView_Previews: PreviewProvider {
+struct ScoreView_Previews: PreviewProvider {
     static var previews: some View {
-        EasyScoreView(viewModel: EasyScoreViewModel(correctGuesses: 8, incorrectGuesses: 2))
+        ScoreView(viewModel: EasyScoreViewModel(correctGuesses: 8, incorrectGuesses: 2))
     }
 }

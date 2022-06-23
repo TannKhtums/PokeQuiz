@@ -10,7 +10,8 @@ import SwiftUI
 struct VeryHardQuestionView: View {
     @EnvironmentObject var viewModel: VeryHardViewModel
 
-    
+    @AppStorage("isDarkMode") var isDarkMode = false
+        
     var body: some View {
         ZStack{
             BackgroundView()
@@ -18,11 +19,13 @@ struct VeryHardQuestionView: View {
                 VStack {
                     Spacer()
                     Spacer()
-                    Text("What types is this Pokemon resistant to?")
+                    Text("What types are not very effective against this Pokemon?")
                         .font(.largeTitle)
                         .foregroundColor(.white)
                         .bold()
                         .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(isDarkMode ? darkBackgrounColor.darkBackground : Color.red)
                     Spacer()
                     PokemonImageViewMedium(selection: viewModel.pokemon.number)
                         .padding()
@@ -57,7 +60,6 @@ struct VeryHardQuestionView: View {
                             }
                         }
                     }
-                    Spacer()
                     Spacer()
                     Spacer()
                 }

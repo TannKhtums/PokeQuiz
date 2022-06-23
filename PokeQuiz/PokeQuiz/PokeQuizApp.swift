@@ -16,7 +16,6 @@ struct PokeQuizApp: App {
         WindowGroup {
             WelcomeScreen().environmentObject(test)
                 .preferredColorScheme(isDarkMode ? .dark : .light)
-//            RegionSettingsTest()
         }
     }
 }

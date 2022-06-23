@@ -20,6 +20,7 @@ class SettingsViewModel: ObservableObject {
     @AppStorage("kalos") var kalos = false
     @AppStorage("alola") var alola   = false
     @AppStorage("galar") var galar = false
+    @AppStorage("hisui") var hisui = false
     
     @Published var selectedRegionArr: [String] = [] {
         didSet {

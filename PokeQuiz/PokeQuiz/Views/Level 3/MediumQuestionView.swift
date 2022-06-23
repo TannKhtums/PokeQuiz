@@ -11,7 +11,8 @@ struct MediumQuestionView: View {
 
     @EnvironmentObject var viewModel: MediumGameViewModel
 
-    
+    @AppStorage("isDarkMode") var isDarkMode = false
+        
     var body: some View {
         ZStack{
             BackgroundView()
@@ -24,6 +25,8 @@ struct MediumQuestionView: View {
                         .foregroundColor(.white)
                         .bold()
                         .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(isDarkMode ? darkBackgrounColor.darkBackground : Color.red)
                     Spacer()
                     PokemonImageViewMedium(selection: viewModel.pokemon.number)
                         .padding()
@@ -58,7 +61,6 @@ struct MediumQuestionView: View {
                             }
                         }
                     }
-                    Spacer()
                     Spacer()
                     Spacer()
                 }
