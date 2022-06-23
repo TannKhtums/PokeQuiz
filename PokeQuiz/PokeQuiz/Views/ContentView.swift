@@ -31,6 +31,7 @@ struct ContentView: View {
                         Label("Game", systemImage: "gamecontroller.fill")
                     }.navigationBarHidden(true)
                 
+                
                 SettingsView()
 //                    .navigationBarHidden(true)
                     .tabItem {

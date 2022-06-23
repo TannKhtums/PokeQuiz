@@ -65,7 +65,7 @@ struct PokemonImageViewEasy: View {
     var body: some View {
         Image(selection)
                 .resizable()
-                .frame(width: 300, height: 300)
+                .frame(width: 275, height: 275)
                 .padding()
                 .background(.regularMaterial)
                 .shadow(radius: 5)

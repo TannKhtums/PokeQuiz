@@ -11,6 +11,8 @@ struct EasyQuestionView: View {
     
     @EnvironmentObject var viewModel: EasyGameViewModel
     
+    @AppStorage("isDarkMode") var isDarkMode = false
+    
     //We also took advantage of EnvironmentObject to get access to the view model which allows the question view to update the quiz when a user guesses.
     
 //    let pokemon: [Pokemon]

@@ -198,17 +198,12 @@
 		B396925227ACD19900DAC5AE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B3EAC0C727F9376E003C6001 /* RegionToggleDataTest.swift */,
-				B3EAC0C927FBCC07003C6001 /* OnboardingView.swift */,
+				B3B7917127EFC41D00D237B4 /* ContentView.swift */,
+				B3A92243283DB87C00486870 /* Onboarding */,
 				B396925527ACD21900DAC5AE /* WelcomeScreen.swift */,
-				B3EAC0D4280B42F1003C6001 /* Onboarding_1.swift */,
-				B3EAC0D6280B752C003C6001 /* Onboarding_2.swift */,
-				B3EAC0D8280B7AFF003C6001 /* Onboarding_3.swift */,
-				B3EAC0DA280BA9CA003C6001 /* Onboarding_4.swift */,
-				B3EAC0DC280BAE25003C6001 /* Onboarding_5.swift */,
+				B3EAC0C727F9376E003C6001 /* RegionToggleDataTest.swift */,
 				B3B08EFC27EB493300D2B4EB /* SettingsView.swift */,
 				B3E7352C279D196D0099127F /* MainMenu.swift */,
-				B3B7917127EFC41D00D237B4 /* ContentView.swift */,
 				B3E232BF2818C2850006F37B /* TestNavigationLink.swift */,
 				B3FA3AB927B4A18200E0A833 /* ScoreView.swift */,
 				B388AEB027E15AB700E523FE /* Utilities */,
@@ -245,6 +240,19 @@
 				B3B08EFE27EC146500D2B4EB /* SettingsViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B3A92243283DB87C00486870 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B3EAC0C927FBCC07003C6001 /* OnboardingView.swift */,
+				B3EAC0D4280B42F1003C6001 /* Onboarding_1.swift */,
+				B3EAC0D6280B752C003C6001 /* Onboarding_2.swift */,
+				B3EAC0D8280B7AFF003C6001 /* Onboarding_3.swift */,
+				B3EAC0DA280BA9CA003C6001 /* Onboarding_4.swift */,
+				B3EAC0DC280BAE25003C6001 /* Onboarding_5.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		B3B08EEF27E6CE3200D2B4EB /* Level 5 */ = {
@@ -551,6 +559,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -558,11 +567,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tannergarlick.PokeQuiz;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tannergarlick.PokeQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -580,6 +589,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -587,11 +597,11 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = tannergarlick.PokeQuiz;
+				PRODUCT_BUNDLE_IDENTIFIER = dev.tannergarlick.PokeQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

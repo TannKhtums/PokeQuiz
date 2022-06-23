@@ -185,7 +185,7 @@ struct SettingsView: View {
                            viewModel.createPokemonArrRegionSelection(chosenArr: viewModel.selectedRegionArr, pokemonArr: viewModel.pokemonArr)
                            print(viewModel.selectedPokemonArr)
                        }, label: {
-                           Text(settingsSaved ? "Settings Saved" : "Save Settings")
+                           Text(settingsSaved ? "Regions Saved" : "Save Regions")
                                .bold()
                                .foregroundColor(Color.white)
                                .frame(width: 200, height: 50)

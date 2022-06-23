@@ -28,7 +28,6 @@ struct VeryEasyQuestionView: View {
             ScrollView {
                 VStack {
                     Spacer()
-                    Spacer()
                     Text("Who's that Pokemon?")
                         .font(.largeTitle)
                         .foregroundColor(.white)
